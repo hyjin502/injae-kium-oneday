@@ -1,0 +1,348 @@
+/* Section 5 — AI·직무·리더십 스타일 선택 */
+
+.section-styles {
+  width: 100%;
+  padding: 120px 0;
+  background: var(--color-white);
+}
+
+/* Figma spec: this section's content column is 980px, not the shared 1200px container */
+.section-styles .container {
+  max-width: 980px;
+}
+
+.styles-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 32px;
+}
+
+.styles-title {
+  font-size: 28px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: var(--tracking-tighter, -0.7px);
+  color: #171719;
+}
+
+.styles-subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5, -0.5px);
+  color: #46474c;
+}
+
+/* Tabs */
+.styles-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.styles-tab {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border: 1px solid #e1e2e4;
+  border-radius: 999px;
+  background: var(--color-white);
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: var(--tracking-tight-5, -0.5px);
+  line-height: 1.6;
+  color: rgba(23, 23, 25, 0.8);
+}
+
+.styles-tab.is-active {
+  background: #46474c;
+  border-color: #46474c;
+  color: var(--color-white);
+}
+
+/* Featured card */
+.featured-card {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+  padding: 32px;
+  background: var(--color-white);
+  border: 1px solid #e1e2e4;
+  border-radius: var(--radius-lg, 12px);
+  margin-bottom: 16px;
+}
+
+.featured-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.featured-title {
+  font-size: var(--text-2xl, 24px);
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: var(--tracking-tighter, -0.7px);
+  color: var(--color-black);
+}
+
+.featured-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5, -0.5px);
+  color: rgba(23, 23, 25, 0.6);
+}
+
+.featured-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.featured-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: rgba(23, 23, 25, 0.05);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5, -0.5px);
+  color: rgba(23, 23, 25, 0.8);
+  white-space: nowrap;
+}
+
+.featured-media {
+  flex: 1 0 0;
+  align-self: stretch;
+  min-width: 0;
+  background: #d9d9d9;
+  border-radius: var(--radius-lg, 16px);
+}
+
+/* Course grid */
+.course-grid {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1 1 0;
+  min-width: 0;
+  background: var(--color-white);
+  border: 1px solid #e1e2e4;
+  border-radius: var(--radius-2xl, 12px);
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.course-thumb {
+  width: 100%;
+  height: 178px;
+  overflow: hidden;
+  background: var(--color-black);
+}
+
+.course-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.course-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  padding: 0 16px;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5, -0.5px);
+  white-space: nowrap;
+}
+
+.badge-warning {
+  color: #ff9200;
+  background: rgba(255, 146, 0, 0.06);
+}
+
+.badge-brand {
+  color: var(--color-blue-accent, #0066ff);
+  background: rgba(0, 102, 255, 0.06);
+}
+
+.course-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5, -0.5px);
+  color: #171719;
+  min-height: 52px;
+}
+
+.course-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5, -0.5px);
+  color: #70737c;
+  white-space: nowrap;
+}
+
+.meta-icon {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+}
+
+.meta-dot {
+  display: inline-block;
+  width: 2px;
+  height: 2px;
+  border-radius: 90px;
+  background: #dbdcdf;
+  margin: 0 2px;
+}
+
+.course-tags {
+  display: flex;
+  gap: 4px;
+}
+
+.course-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: rgba(23, 23, 25, 0.027);
+  color: rgba(23, 23, 25, 0.45);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5, -0.5px);
+  white-space: nowrap;
+}
+
+.course-price {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  width: 100%;
+}
+
+.price-original {
+  position: relative;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5, -0.5px);
+  color: rgba(23, 23, 25, 0.45);
+  text-decoration: line-through;
+  text-decoration-color: rgba(23, 23, 25, 0.45);
+}
+
+.price-final {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5, -0.5px);
+  color: #171719;
+}
+
+.course-btn {
+  appearance: none;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 16px;
+  background: var(--color-white);
+  border: 1px solid #e1e2e4;
+  border-radius: 8px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5, -0.5px);
+  color: #171719;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .featured-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .featured-media {
+    height: 220px;
+  }
+
+  .course-grid {
+    flex-direction: column;
+  }
+
+  .course-card {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-styles {
+    padding: 64px 0;
+  }
+
+  .styles-tabs {
+    gap: 20px;
+  }
+}

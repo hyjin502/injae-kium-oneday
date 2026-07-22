@@ -1,0 +1,195 @@
+/* Section 3 — 중소기업 재직근로자라면, AI · 직무 교육비 최대 90% 환급! */
+
+.section-pricing-banner {
+  width: 100%;
+  background: #0052cc;
+  padding: 120px 0;
+}
+
+.pricing-banner-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.pricing-banner-head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.pricing-banner-title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-tighter);
+  color: var(--color-white);
+}
+
+.pricing-banner-subtitle {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.pricing-banner-subtitle strong {
+  font-weight: 700;
+}
+
+.pricing-card {
+  width: 100%;
+  background: #003d99;
+  border-radius: var(--radius-lg);
+  padding: 32px 40px 40px;
+}
+
+.pricing-card-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  gap: var(--spacing-8);
+}
+
+.pricing-card-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.pricing-card-label {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pricing-card-course {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+}
+
+.pricing-card-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 10.667px;
+  background: var(--color-blue-accent);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 26.667px;
+  letter-spacing: -0.9333px;
+  color: var(--color-white);
+  flex-shrink: 0;
+}
+
+.pricing-card-course-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
+.pricing-card-course-title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-tighter);
+}
+
+.pricing-card-course-desc {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+}
+
+.pricing-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.pricing-card-original {
+  white-space: nowrap;
+}
+
+.pricing-card-original-label {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.pricing-card-original-price {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-tighter);
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: line-through;
+}
+
+.pricing-card-final {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  text-align: right;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.pricing-card-final-label {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pricing-card-final-price {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-tighter);
+  color: var(--color-white);
+}
+
+.pricing-card-final-won {
+  font-size: 20px;
+}
+
+.pricing-banner-footnote {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+  color: rgba(255, 255, 255, 0.6);
+}

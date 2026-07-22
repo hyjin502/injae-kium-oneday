@@ -1,0 +1,851 @@
+Currently selected nodes:
+- 2001:929: PC
+
+
+<frame id="2001:929" name="PC" x="-590" y="-34" width="1920" height="6785">
+  <frame id="2001:930" name="top" x="0" y="0" width="1920" height="786">
+    <text id="2001:933" name="배우면서 바로 써먹는 인재키움 원데이 클래스" x="360" y="196" width="430" height="134" />
+    <text id="2001:934" name="AI·직무·리더십, 휴넷캠퍼스에서 직접 실습하며 배우는  1day 클래스 — 중소기업 재직자라면 최대 95%까지 환급까지" x="360" y="380" width="417" height="58" />
+    <instance id="2001:935" name="Promotion/공유하기/공유하기(PC)" x="1336" y="24" width="224" height="264" />
+    <instance id="2001:1582" name="button" x="360" y="520" width="477" height="72" />
+    <text id="2001:948" name="2026 휴넷 중소기업 인재 키움 프리미엄 훈련" x="360" y="152" width="337" height="28" />
+    <frame id="2005:1206" name="Frame 68" x="940" y="236" width="1232.0001220703125" height="140.00001525878906">
+      <instance id="2004:1160" name="Component 1" x="0" y="0.00000762939453125" width="140" height="140" />
+      <instance id="2005:2200" name="Component 10" x="156" y="0" width="140.00001525878906" height="140.00001525878906" />
+      <instance id="2005:1436" name="Component 8" x="312" y="0" width="140.00001525878906" height="140.00001525878906" />
+      <instance id="2005:1246" name="Component 5" x="468" y="0" width="140.00001525878906" height="140.00001525878906" />
+      <instance id="2005:1201" name="Component 3" x="624" y="0" width="140.00001525878906" height="140.00001525878906" />
+      <instance id="2005:1431" name="Component 7" x="780" y="0" width="140.00001525878906" height="140.00001525878906" />
+      <instance id="2005:1424" name="Component 6" x="936" y="0" width="140.00001525878906" height="140.00001525878906" />
+      <instance id="2005:2150" name="Component 9" x="1092" y="0" width="140.00001525878906" height="140.00001525878906" />
+    </frame>
+    <frame id="2005:1387" name="Frame 69" x="1010" y="396" width="1232.0001220703125" height="140.00001525878906">
+      <instance id="2005:1389" name="Component 2" x="0" y="0" width="140.00001525878906" height="140.00001525878906" />
+      <instance id="2005:1924" name="Component 6" x="156.00001525878906" y="0" width="140.00001525878906" height="140.00001525878906" />
+      <instance id="2005:1392" name="Component 5" x="312.0000305175781" y="0" width="140.00001525878906" height="140.00001525878906" />
+      <instance id="2005:2189" name="Component 11" x="468.00006103515625" y="0" width="140.00001525878906" height="140.00001525878906" />
+      <instance id="2005:1951" name="Component 9" x="624.0000610351562" y="0" width="140.00001525878906" height="140.00001525878906" />
+      <instance id="2005:1390" name="Component 3" x="780.0000610351562" y="0" width="140.00001525878906" height="140.00001525878906" />
+      <instance id="2005:1942" name="Component 8" x="936.0000610351562" y="0" width="140.00001525878906" height="140.00001525878906" />
+      <instance id="2005:2171" name="Component 10" x="1092.0001220703125" y="0" width="140.00001525878906" height="140.00001525878906" />
+    </frame>
+  </frame>
+  <frame id="2001:949" name="1" x="0" y="786" width="1920" height="1159" hidden="true">
+    <rounded-rectangle id="2001:950" name="Rectangle 1" x="0" y="0" width="1920" height="1159" />
+    <frame id="2001:951" name="Frame 12" x="470" y="120" width="980" height="919">
+      <frame id="2001:952" name="Frame 9" x="40" y="291" width="900" height="2" />
+      <frame id="2001:953" name="Frame 11" x="40" y="241" width="209" height="18">
+        <rounded-rectangle id="2001:954" name="스크린샷 2025-08-18 오후 1.05.06 1" x="-47" y="-19" width="309" height="64" />
+      </frame>
+      <frame id="2001:955" name="Frame 14" x="40" y="325" width="289" height="253">
+        <text id="2001:956" name="매일 반복되는 업무에 현타가 온다면?" x="72" y="40" width="144" height="58" />
+        <text id="2001:957" name="AI로 반복 업무 자동화하고 업무 효율성 높이기. #ChatGPT #Copilot #Make" x="23" y="169" width="242" height="44" />
+        <frame id="2001:958" name="Frame 50" x="52" y="114" width="184" height="39">
+          <text id="2001:959" name="AI 업무 자동화" x="0" y="0" width="156" height="39" />
+          <instance id="2001:960" name="arrows/chevron-right" x="160" y="7.5" width="24" height="24" />
+        </frame>
+      </frame>
+      <frame id="2001:961" name="Frame 21" x="40" y="594" width="289" height="253">
+        <text id="2001:962" name="아이디어도 없고, 외주비는 더 없다면?" x="75" y="40" width="138" height="58" />
+        <frame id="2001:963" name="Frame 53" x="78" y="114" width="132" height="39">
+          <text id="2001:964" name="AI 디자인" x="0" y="0" width="104" height="39" />
+          <instance id="2001:965" name="arrows/chevron-right" x="108" y="7.5" width="24" height="24" />
+        </frame>
+        <text id="2001:966" name="실무에 바로 적용 가능한 AI 디자인 스킬 기르기.  #Midjourney #DALL-E #Stable Diffusion" x="20" y="169" width="248" height="44" />
+      </frame>
+      <frame id="2001:967" name="Frame 19" x="346" y="325" width="289" height="253">
+        <text id="2001:968" name="끝 없는 엑셀 수식, IT 업무 요청에 지쳤다면?" x="56" y="40" width="176" height="58" />
+        <frame id="2001:969" name="Frame 51" x="52" y="114" width="184" height="39">
+          <text id="2001:970" name="AI 데이터 분석" x="0" y="0" width="156" height="39" />
+          <instance id="2001:971" name="arrows/chevron-right" x="160" y="7.5" width="24" height="24" />
+        </frame>
+        <text id="2001:972" name="AI와 함께 스스로 데이터 분석하는 힘 기르기. #Python #SQL #ChatGPT" x="29" y="169" width="231" height="44" />
+      </frame>
+      <frame id="2001:973" name="Frame 22" x="346" y="594" width="289" height="253">
+        <text id="2001:974" name="매일 진화하는 AI, 벌써 뒤쳐졌다면?" x="84" y="40" width="120" height="58" />
+        <frame id="2001:975" name="Frame 54" x="78" y="114" width="132" height="39">
+          <text id="2001:976" name="AI 트렌드" x="0" y="0" width="104" height="39" />
+          <instance id="2001:977" name="arrows/chevron-right" x="108" y="7.5" width="24" height="24" />
+        </frame>
+        <text id="2001:978" name="AI 트렌드에 인사이트까지 한 번에 따라잡기. #AI #ChatGPT" x="30" y="169" width="228" height="44" />
+      </frame>
+      <frame id="2001:979" name="Frame 20" x="652" y="325" width="289" height="253">
+        <text id="2001:980" name="고객도, 아이디어도, 매출도 고갈됐다면?" x="53" y="40" width="182" height="58" />
+        <frame id="2001:981" name="Frame 52" x="78" y="114" width="132" height="39">
+          <text id="2001:982" name="AI 마케팅" x="0" y="0" width="104" height="39" />
+          <instance id="2001:983" name="arrows/chevron-right" x="108" y="7.5" width="24" height="24" />
+        </frame>
+        <text id="2001:984" name="마케팅 전략 수립부터 콘텐츠 기획 및 제작까지. #ChatGPT #Cursor AI #Make #SQL" x="23" y="169" width="242" height="44" />
+      </frame>
+      <frame id="2001:985" name="Frame 5" x="652" y="72" width="288" height="53">
+        <text id="2001:986" name="나한테 가장 필요한 AI 스킬이 뭘까?" x="24" y="12" width="240" height="29" />
+      </frame>
+      <text id="2001:987" name="지금 가장 필요한 AI 스킬부터 시작해 보세요!  가장 공감되는 고민을 클릭하시면, 해결할 수 있는 강의로 안내해드릴게요 😏" x="40" y="165" width="558" height="56" />
+    </frame>
+  </frame>
+  <frame id="2001:988" name="2" x="0" y="786" width="1920" height="606">
+    <frame id="2001:989" name="Frame 28" x="470" y="120" width="980" height="366">
+      <frame id="2001:990" name="Frame 37" x="0" y="0" width="980" height="78">
+        <text id="2001:991" name="배워서 더 잘해내고 싶었지만, 그동안 망설였던 이유" x="0" y="0" width="308" height="78" />
+        <frame id="2001:992" name="Frame 55" x="0" y="82" width="455" height="26" hidden="true">
+          <text id="2001:993" name="지금 쓰는 엑셀도, 메일도 당장 자동화하는 법" x="0" y="0" width="266" height="26" />
+          <text id="2001:994" name="#ChatGPT #Copilot #Make" x="274" y="0" width="181" height="26" />
+        </frame>
+      </frame>
+      <frame id="2006:1307" name="Frame 70" x="0" y="110" width="980" height="256">
+        <frame id="2007:1004" name="1" x="0" y="0" width="316" height="256">
+          <instance id="2007:1005" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+          <frame id="2008:974" name="Frame 72" x="40" y="40" width="236" height="48">
+            <frame id="2008:1031" name="Frame 73" x="0" y="0" width="48" height="48">
+              <instance id="2008:1145" name="finance &amp; ecommerce/coins-hand" x="12" y="12" width="24" height="24" />
+            </frame>
+            <frame id="2008:1018" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+            <frame id="2008:965" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+              <frame id="2008:966" name="Elemento" x="0" y="0" width="60" height="60">
+                <frame id="2008:967" name="twitter" x="10" y="10" width="40" height="40" />
+                <frame id="2008:969" name="twitter" x="10" y="10" width="40" height="40" />
+                <ellipse id="2008:971" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+              </frame>
+              <ellipse id="2008:972" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+            </frame>
+          </frame>
+          <frame id="2007:1006" name="Frame 71" x="40" y="112" width="236" height="28">
+            <instance id="2007:1007" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+            <text id="2007:1008" name="교육비가 부담스러워서" x="0" y="0" width="236" height="28" />
+          </frame>
+          <text id="2007:1009" name="업무를 위해 듣고 싶은 과정은 있지만,  가격 앞에서 망설이게 됩니다." x="40" y="164" width="236" height="52" />
+        </frame>
+        <frame id="2008:1082" name="2" x="332" y="0" width="316" height="256">
+          <instance id="2008:1083" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+          <frame id="2008:1084" name="Frame 72" x="40" y="40" width="236" height="48">
+            <frame id="2008:1132" name="Frame 74" x="0" y="0" width="48" height="48">
+              <instance id="2008:1150" name="users/face-frown" x="12" y="12" width="24" height="24" />
+            </frame>
+            <frame id="2008:1087" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+            <frame id="2008:1089" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+              <frame id="2008:1090" name="Elemento" x="0" y="0" width="60" height="60">
+                <frame id="2008:1091" name="twitter" x="10" y="10" width="40" height="40" />
+                <frame id="2008:1093" name="twitter" x="10" y="10" width="40" height="40" />
+                <ellipse id="2008:1095" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+              </frame>
+              <ellipse id="2008:1096" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+            </frame>
+          </frame>
+          <frame id="2008:1097" name="Frame 71" x="40" y="112" width="236" height="28">
+            <instance id="2008:1098" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+            <text id="2008:1099" name="바로 써먹기 어려워서" x="0" y="0" width="236" height="28" />
+          </frame>
+          <text id="2008:1100" name="이론만 배우는 강의는 많은데, 내 업무에 바로 적용할 실습형 과정은 드뭅니다." x="40" y="164" width="236" height="52" />
+        </frame>
+        <frame id="2008:1033" name="3" x="664" y="0" width="316" height="256">
+          <instance id="2008:1034" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+          <frame id="2008:1035" name="Frame 72" x="40" y="40" width="236" height="48">
+            <frame id="2008:1136" name="Frame 74" x="0" y="0" width="48" height="48">
+              <instance id="2008:1137" name="time/clock-fast-forward" x="12" y="12" width="24" height="24" />
+            </frame>
+            <frame id="2008:1038" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+            <frame id="2008:1040" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+              <frame id="2008:1041" name="Elemento" x="0" y="0" width="60" height="60">
+                <frame id="2008:1042" name="twitter" x="10" y="10" width="40" height="40" />
+                <frame id="2008:1044" name="twitter" x="10" y="10" width="40" height="40" />
+                <ellipse id="2008:1046" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+              </frame>
+              <ellipse id="2008:1047" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+            </frame>
+          </frame>
+          <frame id="2008:1048" name="Frame 71" x="40" y="112" width="236" height="28">
+            <instance id="2008:1049" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+            <text id="2008:1050" name="시간 내기가 애매해서" x="0" y="0" width="236" height="28" />
+          </frame>
+          <text id="2008:1051" name="일정, 장소, 준비물까지 신경쓰다 보면 신청할 타이밍을 놓칩니다." x="40" y="164" width="236" height="52" />
+        </frame>
+      </frame>
+      <frame id="2001:1013" name="Frame 36" x="454" y="398" width="72" height="8" hidden="true">
+        <frame id="2001:1014" name="Frame 23" x="0" y="0" width="8" height="8" />
+        <frame id="2001:1015" name="Frame 24" x="16" y="0" width="8" height="8" />
+        <frame id="2001:1016" name="Frame 25" x="32" y="0" width="8" height="8" />
+        <frame id="2001:1017" name="Frame 26" x="48" y="0" width="8" height="8" />
+        <frame id="2001:1018" name="Frame 27" x="64" y="0" width="8" height="8" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="2008:1155" name="3" x="0" y="1392" width="1920" height="656">
+    <frame id="2008:1156" name="Frame 28" x="470" y="120" width="980" height="416">
+      <frame id="2008:1157" name="Frame 37" x="0" y="0" width="980" height="108">
+        <text id="2008:1158" name="중소기업 재직근로자라면,  AI · 직무 교육비 최대 90% 환급!" x="0" y="0" width="346" height="78" />
+        <text id="2008:1160" name="우선지원대상기업 소속 근로자* 최대 90% 환급 교육 기회, 놓치지 마세요!" x="0" y="82" width="437" height="26" />
+      </frame>
+      <frame id="2010:993" name="Frame 78" x="0" y="140" width="980" height="178">
+        <frame id="2010:1009" name="Frame 81" x="40" y="32" width="900" height="106">
+          <frame id="2010:1008" name="Frame 80" x="0" y="0" width="421" height="106">
+            <text id="2009:993" name="교육비 환급 예시" x="0" y="0" width="421" height="22" />
+            <frame id="2009:1000" name="Frame 76" x="0" y="42" width="421" height="64">
+              <frame id="2009:995" name="Frame 75" x="0" y="0" width="64" height="64">
+                <text id="2009:994" name="AX" x="13.333333969116211" y="13.5" width="37.33333206176758" height="37" />
+              </frame>
+              <frame id="2009:1003" name="Frame 77" x="80" y="0" width="341" height="64">
+                <text id="2009:996" name="바이브코딩을 통한 나만의 서비스 개발" x="0" y="0" width="341" height="34" />
+                <text id="2009:1001" name="1DAY · 7H 오프라인 교육" x="0" y="38" width="152" height="26" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="2010:1004" name="Frame 79" x="421" y="21" width="479" height="85">
+            <text id="2010:1005" name="정가 600,000원" x="349" y="0" width="130" height="29" />
+            <frame id="2010:1055" name="Frame 82" x="0" y="29" width="479" height="56">
+              <text id="2010:1063" name="최대 90% 환급 시, 최종 실부담금" x="142" y="17" width="173" height="22" />
+              <text id="2010:1006" name="60,000원" x="325" y="0" width="154" height="56" />
+            </frame>
+            <rounded-rectangle id="2010:1052" name="Rectangle 89" x="349" y="13" width="130" height="1" />
+          </frame>
+        </frame>
+      </frame>
+      <text id="2008:1334" name="※ 우선지원대상기업 확인 및 지원 한도 조회 ① 고용24(www.work24.go.kr)접속 → 마이페이지 → 재직자 훈련관리 →사업주 훈련 → 지원한도 조회 ② 고용·산재보험 토탈서비스(total.comwel.or.kr) 접속 → 로그인 → 보험가입정보 조회 → 사업장 총괄카드 조회" x="0" y="350" width="589" height="66" />
+      <frame id="2008:1162" name="Frame 41" x="0" y="140" width="1132" height="473.75" hidden="true">
+        <frame id="2008:1163" name="Frame 26" x="0" y="214.875" width="44" height="44">
+          <instance id="2008:1164" name="arrows/chevron-left" x="10" y="10" width="24" height="24" />
+        </frame>
+        <frame id="2008:1165" name="Frame 61" x="76" y="0" width="1612" height="906">
+          <frame id="2008:1166" name="Frame 39" x="0" y="0" width="1612" height="445">
+            <instance id="2008:1167" name="썸네일" x="0" y="0" width="316" height="445" />
+            <instance id="2008:1168" name="Frame 34" x="324" y="0" width="316" height="445" />
+            <instance id="2008:1169" name="Frame 37" x="648" y="0" width="316" height="445" />
+            <instance id="2008:1170" name="Frame 35" x="972" y="0" width="316" height="445" />
+            <instance id="2008:1171" name="Frame 36" x="1296" y="0" width="316" height="445" />
+          </frame>
+          <frame id="2008:1172" name="Frame 40" x="0" y="461" width="1612" height="445">
+            <instance id="2008:1173" name="썸네일" x="0" y="0" width="316" height="445" />
+            <instance id="2008:1174" name="Frame 34" x="324" y="0" width="316" height="445" />
+            <instance id="2008:1175" name="Frame 37" x="648" y="0" width="316" height="445" />
+            <instance id="2008:1176" name="Frame 35" x="972" y="0" width="316" height="445" />
+            <instance id="2008:1177" name="Frame 36" x="1296" y="0" width="316" height="445" />
+          </frame>
+        </frame>
+        <frame id="2008:1178" name="Frame 27" x="1090" y="214.875" width="44" height="44">
+          <instance id="2008:1179" name="arrows/chevron-right" x="10" y="10" width="24" height="24" />
+        </frame>
+      </frame>
+      <frame id="2008:1238" name="Frame 36" x="454" y="310" width="72" height="8" hidden="true">
+        <frame id="2008:1239" name="Frame 23" x="0" y="0" width="8" height="8" />
+        <frame id="2008:1240" name="Frame 24" x="16" y="0" width="8" height="8" />
+        <frame id="2008:1241" name="Frame 25" x="32" y="0" width="8" height="8" />
+        <frame id="2008:1242" name="Frame 26" x="48" y="0" width="8" height="8" />
+        <frame id="2008:1243" name="Frame 27" x="64" y="0" width="8" height="8" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="2010:1066" name="4" x="0" y="2048" width="1920" height="710">
+    <frame id="2010:1067" name="Frame 28" x="470" y="120" width="980" height="470">
+      <frame id="2010:1068" name="Frame 37" x="0" y="0" width="980" height="108">
+        <text id="2010:1069" name="휴넷 인재키움에서 부담없이, 효과적으로!" x="0" y="0" width="233" height="78" />
+        <frame id="2010:1070" name="Frame 55" x="0" y="82" width="458" height="26">
+          <text id="2010:1071" name="AI 실무부터 직무 스킬, 직급별 리더십까지 — 목적에 맞는 트랙을 골라보세요." x="0" y="0" width="458" height="26" />
+        </frame>
+      </frame>
+      <frame id="2021:989" name="Frame 83" x="0" y="168" width="980" height="224" hidden="true">
+        <frame id="2010:1091" name="Frame 70" x="0" y="0" width="233" height="224">
+          <frame id="2021:926" name="8" x="0" y="0" width="233" height="224">
+            <instance id="2021:927" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+            <frame id="2021:928" name="Frame 72" x="24" y="24" width="185" height="48">
+              <frame id="2021:929" name="Frame 73" x="0" y="0" width="48" height="48">
+                <instance id="2021:930" name="finance &amp; ecommerce/coins-swap-01" x="12" y="12" width="24" height="24" />
+              </frame>
+              <frame id="2021:931" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+              <frame id="2021:933" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+                <frame id="2021:934" name="Elemento" x="0" y="0" width="60" height="60">
+                  <frame id="2021:935" name="twitter" x="10" y="10" width="40" height="40" />
+                  <frame id="2021:937" name="twitter" x="10" y="10" width="40" height="40" />
+                  <ellipse id="2021:939" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+                </frame>
+                <ellipse id="2021:940" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+              </frame>
+            </frame>
+            <frame id="2021:941" name="Frame 71" x="24" y="96" width="185" height="28">
+              <instance id="2021:942" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+              <text id="2021:943" name="최대 90% 환급" x="0" y="0" width="185" height="28" />
+            </frame>
+            <text id="2021:944" name="환급대상이라면 실부담금은 정가 대비 1/10까지 낮아져요" x="24" y="148" width="185" height="52" />
+          </frame>
+        </frame>
+        <frame id="2021:1011" name="Frame 71" x="249" y="0" width="233" height="224">
+          <frame id="2021:1012" name="8" x="0" y="0" width="233" height="224">
+            <instance id="2021:1013" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+            <frame id="2021:1014" name="Frame 72" x="24" y="24" width="185" height="48">
+              <frame id="2021:1015" name="Frame 73" x="0" y="0" width="48" height="48">
+                <instance id="2021:1016" name="education/book-open-02" x="12" y="12" width="24" height="24" />
+              </frame>
+              <frame id="2021:1017" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+              <frame id="2021:1019" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+                <frame id="2021:1020" name="Elemento" x="0" y="0" width="60" height="60">
+                  <frame id="2021:1021" name="twitter" x="10" y="10" width="40" height="40" />
+                  <frame id="2021:1023" name="twitter" x="10" y="10" width="40" height="40" />
+                  <ellipse id="2021:1025" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+                </frame>
+                <ellipse id="2021:1026" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+              </frame>
+            </frame>
+            <frame id="2021:1027" name="Frame 71" x="24" y="96" width="185" height="28">
+              <instance id="2021:1028" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+              <text id="2021:1029" name="오프라인 실습 몰입" x="0" y="0" width="185" height="28" />
+            </frame>
+            <text id="2021:1030" name="오프라인 실습 교육에서 배우면서 바로 써먹어 보세요" x="24" y="148" width="185" height="52" />
+          </frame>
+        </frame>
+        <frame id="2021:1033" name="8" x="498" y="0" width="233" height="224">
+          <instance id="2021:1034" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+          <frame id="2021:1035" name="Frame 72" x="24" y="24" width="185" height="48">
+            <frame id="2021:1036" name="Frame 73" x="0" y="0" width="48" height="48">
+              <instance id="2021:1037" name="maps &amp; travel/flag-04" x="12" y="12" width="24" height="24" />
+            </frame>
+            <frame id="2021:1038" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+            <frame id="2021:1040" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+              <frame id="2021:1041" name="Elemento" x="0" y="0" width="60" height="60">
+                <frame id="2021:1042" name="twitter" x="10" y="10" width="40" height="40" />
+                <frame id="2021:1044" name="twitter" x="10" y="10" width="40" height="40" />
+                <ellipse id="2021:1046" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+              </frame>
+              <ellipse id="2021:1047" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+            </frame>
+          </frame>
+          <frame id="2021:1048" name="Frame 71" x="24" y="96" width="185" height="28">
+            <instance id="2021:1049" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+            <text id="2021:1050" name="AX · 직무 스킬 · 리더십" x="0" y="0" width="185" height="28" />
+          </frame>
+          <text id="2021:1051" name="다양한 직무 / 직급 / 업무에 적합한 주제를 골라 신청하세요" x="24" y="148" width="185" height="52" />
+        </frame>
+        <frame id="2021:1054" name="9" x="747" y="0" width="233" height="224">
+          <instance id="2021:1055" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+          <frame id="2021:1056" name="Frame 72" x="24" y="24" width="185" height="48">
+            <frame id="2021:1057" name="Frame 73" x="0" y="0" width="48" height="48">
+              <instance id="2021:1058" name="users/users-01" x="12" y="12" width="24" height="24" />
+            </frame>
+            <frame id="2021:1059" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+            <frame id="2021:1061" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+              <frame id="2021:1062" name="Elemento" x="0" y="0" width="60" height="60">
+                <frame id="2021:1063" name="twitter" x="10" y="10" width="40" height="40" />
+                <frame id="2021:1065" name="twitter" x="10" y="10" width="40" height="40" />
+                <ellipse id="2021:1067" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+              </frame>
+              <ellipse id="2021:1068" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+            </frame>
+          </frame>
+          <frame id="2021:1069" name="Frame 71" x="24" y="96" width="185" height="28">
+            <instance id="2021:1070" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+            <text id="2021:1071" name="검증된 전문 강사진" x="0" y="0" width="142" height="28" />
+          </frame>
+          <text id="2021:1072" name="기업 교육으로 이미 검증받은 전문 강사진이 가르쳐요" x="24" y="148" width="185" height="52" />
+        </frame>
+      </frame>
+      <frame id="2021:1087" name="Frame 84" x="0" y="140" width="980" height="330">
+        <frame id="2021:1089" name="8" x="0" y="0" width="482" height="157">
+          <instance id="2021:1090" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+          <frame id="2021:1091" name="Frame 72" x="24" y="24" width="185" height="48" hidden="true">
+            <frame id="2021:1092" name="Frame 73" x="0" y="0" width="48" height="48">
+              <instance id="2021:1093" name="finance &amp; ecommerce/coins-swap-01" x="12" y="12" width="24" height="24" />
+            </frame>
+            <frame id="2021:1094" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+            <frame id="2021:1096" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+              <frame id="2021:1097" name="Elemento" x="0" y="0" width="60" height="60">
+                <frame id="2021:1098" name="twitter" x="10" y="10" width="40" height="40" />
+                <frame id="2021:1100" name="twitter" x="10" y="10" width="40" height="40" />
+                <ellipse id="2021:1102" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+              </frame>
+              <ellipse id="2021:1103" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+            </frame>
+          </frame>
+          <frame id="2021:1104" name="Frame 71" x="24" y="24" width="434" height="63">
+            <instance id="2021:1105" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+            <frame id="2021:1173" name="Frame 85" x="0" y="0" width="54" height="19">
+              <text id="2021:1106" name="Point 1" x="10" y="0" width="34" height="19" />
+            </frame>
+            <text id="2021:1171" name="최대 90% 환급" x="0" y="35" width="434" height="28" />
+          </frame>
+          <text id="2021:1107" name="환급대상이라면 실부담금은 정가 대비 1/10까지 낮아져요" x="24" y="99" width="434" height="26" />
+        </frame>
+        <frame id="2021:1176" name="8" x="498" y="0" width="482" height="157">
+          <instance id="2021:1177" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+          <frame id="2021:1178" name="Frame 72" x="24" y="24" width="185" height="48" hidden="true">
+            <frame id="2021:1179" name="Frame 73" x="0" y="0" width="48" height="48">
+              <instance id="2021:1180" name="finance &amp; ecommerce/coins-swap-01" x="12" y="12" width="24" height="24" />
+            </frame>
+            <frame id="2021:1181" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+            <frame id="2021:1183" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+              <frame id="2021:1184" name="Elemento" x="0" y="0" width="60" height="60">
+                <frame id="2021:1185" name="twitter" x="10" y="10" width="40" height="40" />
+                <frame id="2021:1187" name="twitter" x="10" y="10" width="40" height="40" />
+                <ellipse id="2021:1189" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+              </frame>
+              <ellipse id="2021:1190" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+            </frame>
+          </frame>
+          <frame id="2021:1191" name="Frame 71" x="24" y="24" width="434" height="63">
+            <instance id="2021:1192" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+            <frame id="2021:1193" name="Frame 85" x="0" y="0" width="56" height="19">
+              <text id="2021:1194" name="Point 2" x="10" y="0" width="36" height="19" />
+            </frame>
+            <text id="2021:1195" name="오프라인 실습 몰입" x="0" y="35" width="434" height="28" />
+          </frame>
+          <text id="2021:1196" name="오프라인 실습 교육에서 배우면서 바로 써먹어 보세요" x="24" y="99" width="434" height="26" />
+        </frame>
+        <frame id="2021:1200" name="8" x="0" y="173" width="482" height="157">
+          <instance id="2021:1201" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+          <frame id="2021:1202" name="Frame 72" x="24" y="24" width="185" height="48" hidden="true">
+            <frame id="2021:1203" name="Frame 73" x="0" y="0" width="48" height="48">
+              <instance id="2021:1204" name="finance &amp; ecommerce/coins-swap-01" x="12" y="12" width="24" height="24" />
+            </frame>
+            <frame id="2021:1205" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+            <frame id="2021:1207" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+              <frame id="2021:1208" name="Elemento" x="0" y="0" width="60" height="60">
+                <frame id="2021:1209" name="twitter" x="10" y="10" width="40" height="40" />
+                <frame id="2021:1211" name="twitter" x="10" y="10" width="40" height="40" />
+                <ellipse id="2021:1213" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+              </frame>
+              <ellipse id="2021:1214" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+            </frame>
+          </frame>
+          <frame id="2021:1215" name="Frame 71" x="24" y="24" width="434" height="63">
+            <instance id="2021:1216" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+            <frame id="2021:1217" name="Frame 85" x="0" y="0" width="56" height="19">
+              <text id="2021:1218" name="Point 3" x="10" y="0" width="36" height="19" />
+            </frame>
+            <text id="2021:1219" name="AX · 직무 스킬 · 리더십" x="0" y="35" width="434" height="28" />
+          </frame>
+          <text id="2021:1220" name="다양한 직무 / 직급 / 업무에 적합한 주제를 골라 신청하세요" x="24" y="99" width="434" height="26" />
+        </frame>
+        <frame id="2021:1223" name="8" x="498" y="173" width="482" height="157">
+          <instance id="2021:1224" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+          <frame id="2021:1225" name="Frame 72" x="24" y="24" width="185" height="48" hidden="true">
+            <frame id="2021:1226" name="Frame 73" x="0" y="0" width="48" height="48">
+              <instance id="2021:1227" name="finance &amp; ecommerce/coins-swap-01" x="12" y="12" width="24" height="24" />
+            </frame>
+            <frame id="2021:1228" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+            <frame id="2021:1230" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+              <frame id="2021:1231" name="Elemento" x="0" y="0" width="60" height="60">
+                <frame id="2021:1232" name="twitter" x="10" y="10" width="40" height="40" />
+                <frame id="2021:1234" name="twitter" x="10" y="10" width="40" height="40" />
+                <ellipse id="2021:1236" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+              </frame>
+              <ellipse id="2021:1237" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+            </frame>
+          </frame>
+          <frame id="2021:1238" name="Frame 71" x="24" y="24" width="434" height="63">
+            <instance id="2021:1239" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+            <frame id="2021:1240" name="Frame 85" x="0" y="0" width="56" height="19">
+              <text id="2021:1241" name="Point 4" x="10" y="0" width="36" height="19" />
+            </frame>
+            <text id="2021:1242" name="검증된 전문 강사진" x="0" y="35" width="434" height="28" />
+          </frame>
+          <text id="2021:1243" name="대기업·공공기관 등 기업 교육으로 이미 검증받은 전문 강사진이 가르쳐요" x="24" y="99" width="434" height="26" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="2021:1587" name="5" x="0" y="2758" width="1920" height="1183">
+    <frame id="2021:1588" name="Frame 28" x="470" y="120" width="980" height="943">
+      <frame id="2021:1589" name="Frame 37" x="0" y="0" width="980" height="108">
+        <text id="2021:1590" name="AI · 직무 · 리더십 어떤 스킬이 필요하세요?" x="0" y="0" width="262" height="78" />
+        <frame id="2021:1591" name="Frame 55" x="0" y="82" width="458" height="26">
+          <text id="2021:1592" name="AI 실무부터 직무 스킬, 직급별 리더십까지 — 목적에 맞는 트랙을 골라보세요." x="0" y="0" width="458" height="26" />
+          <text id="2021:1593" name="#ChatGPT #Copilot #Make" x="466" y="0" width="181" height="26" hidden="true" />
+        </frame>
+      </frame>
+      <frame id="2022:2297" name="Frame 92" x="0" y="140" width="980" height="326">
+        <frame id="2021:1848" name="Frame 88" x="0" y="0" width="980" height="58">
+          <frame id="2021:1842" name="Frame 86" x="0" y="0" width="486" height="58" hidden="true">
+            <frame id="2021:1838" name="Frame 75" x="24" y="17" width="24" height="24">
+              <text id="2021:1839" name="AX" x="5" y="5" width="14" height="14" />
+            </frame>
+            <text id="2021:1841" name="AX 실무 교육" x="56" y="16" width="82" height="26" />
+          </frame>
+          <frame id="2021:1843" name="Frame 87" x="329.3333435058594" y="0" width="321.33331298828125" height="58" hidden="true">
+            <frame id="2021:1844" name="Frame 75" x="20" y="10" width="30" height="30" hidden="true">
+              <text id="2021:1845" name="BIZ" x="6.5" y="6.5" width="17" height="17" />
+            </frame>
+            <frame id="2022:1854" name="Frame 76" x="24" y="17" width="24" height="24">
+              <text id="2022:1855" name="BIZ" x="5" y="5" width="14" height="14" />
+            </frame>
+            <text id="2021:1846" name="비즈니스 직무·스킬" x="56" y="16" width="115" height="26" />
+          </frame>
+          <frame id="2021:1849" name="Frame 88" x="494" y="0" width="239" height="58" hidden="true">
+            <frame id="2021:1850" name="Frame 75" x="20" y="10" width="30" height="30" hidden="true">
+              <text id="2021:1851" name="LEAD" x="1" y="6.5" width="28" height="17" />
+            </frame>
+            <frame id="2022:1857" name="Frame 76" x="24" y="17" width="31" height="24">
+              <text id="2022:1858" name="LEAD" x="4" y="5" width="23" height="14" />
+            </frame>
+            <text id="2021:1852" name="직급별 리더십" x="63" y="16" width="84" height="26" />
+          </frame>
+          <instance id="2022:1988" name="tab" x="0" y="0" width="980" height="58" hidden="true" />
+          <instance id="2022:2262" name="tab" x="0" y="0" width="980" height="58">
+            <frame id="0:4" name="underline" x="0" y="57" width="980" height="1" hidden="true" />
+            <instance id="0:5" name="button-ghost-icon" x="0" y="16" width="28" height="28" hidden="true" />
+            <slot id="0:6" name="Slot" x="0" y="0" width="980" height="58">
+              <instance id="0:7" name="_item/tab" x="0" y="0" width="82" height="58" />
+              <instance id="0:10" name="_item/tab" x="114" y="0" width="115" height="58" />
+              <instance id="0:13" name="_item/tab" x="261" y="0" width="84" height="58" />
+              <instance id="0:16" name="_item/tab" x="377" y="0" width="23" height="58" hidden="true" />
+              <instance id="0:17" name="_item/tab" x="377" y="0" width="23" height="58" hidden="true" />
+              <instance id="0:18" name="_item/tab" x="377" y="0" width="23" height="58" hidden="true" />
+              <instance id="0:19" name="_item/tab" x="377" y="0" width="23" height="58" hidden="true" />
+            </slot>
+            <instance id="0:20" name="button-ghost-icon" x="732" y="16" width="28" height="28" hidden="true" />
+          </instance>
+        </frame>
+        <frame id="2022:2180" name="Frame 91" x="0" y="74" width="980" height="252">
+          <frame id="2022:2108" name="Frame 89" x="32" y="32" width="488" height="188">
+            <text id="2022:2105" name="업무 방식을 바꾸는 AI 실무교육" x="0" y="0" width="488" height="68" />
+            <text id="2022:2106" name="Claude·Gemini·ChatGPT 등 주요 AI 툴을 통해 데이터 분석, 마케팅 콘텐츠,  업무 자동화, AI 서비스 개발까지 — 실제 업무에 AI를 적용해 워크플로우를 혁신합니다." x="0" y="84" width="488" height="48" />
+            <frame id="2022:2154" name="Frame 90" x="0" y="148" width="488" height="40">
+              <instance id="2022:2127" name="chips-item" x="0" y="0" width="71" height="40" />
+              <instance id="2022:2144" name="chips-item" x="79" y="0" width="71" height="40" />
+              <instance id="2022:2155" name="chips-item" x="158" y="0" width="86" height="40" />
+              <instance id="2022:2161" name="chips-item" x="252" y="0" width="86" height="40" />
+              <instance id="2022:2167" name="chips-item" x="346" y="0" width="86" height="40" />
+              <instance id="2022:2173" name="chips-item" x="440" y="0" width="48" height="40" />
+            </frame>
+          </frame>
+          <rounded-rectangle id="2022:2179" name="Rectangle 90" x="580" y="32" width="368" height="188" />
+        </frame>
+      </frame>
+      <frame id="2021:1594" name="Frame 70" x="0" y="498" width="980" height="445">
+        <instance id="2022:6528" name="썸네일" x="0" y="0" width="316" height="445" />
+        <instance id="2022:6565" name="썸네일" x="332" y="0" width="316" height="445" />
+        <instance id="2022:6602" name="썸네일" x="664" y="0" width="316" height="445" />
+      </frame>
+      <frame id="2021:1652" name="Frame 36" x="454" y="398" width="72" height="8" hidden="true">
+        <frame id="2021:1653" name="Frame 23" x="0" y="0" width="8" height="8" />
+        <frame id="2021:1654" name="Frame 24" x="16" y="0" width="8" height="8" />
+        <frame id="2021:1655" name="Frame 25" x="32" y="0" width="8" height="8" />
+        <frame id="2021:1656" name="Frame 26" x="48" y="0" width="8" height="8" />
+        <frame id="2021:1657" name="Frame 27" x="64" y="0" width="8" height="8" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="2022:7158" name="6" x="0" y="3941" width="1920" height="660">
+    <frame id="2022:7159" name="Frame 28" x="470" y="120" width="980" height="420">
+      <frame id="2022:7160" name="Frame 37" x="0" y="0" width="980" height="78">
+        <text id="2022:7161" name="휴넷 인재키움 오프라인 교육 수강생 평균 만족도 4.7점" x="0" y="0" width="300" height="78" />
+        <frame id="2022:7162" name="Frame 55" x="0" y="82" width="458" height="26" hidden="true">
+          <text id="2022:7163" name="AI 실무부터 직무 스킬, 직급별 리더십까지 — 목적에 맞는 트랙을 골라보세요." x="0" y="0" width="458" height="26" />
+        </frame>
+      </frame>
+      <frame id="2022:7591" name="Frame 98" x="0" y="110" width="980" height="310">
+        <instance id="2022:7511" name="수강생후기" x="0" y="0" width="316" height="310" />
+        <instance id="2022:7527" name="수강생후기" x="332" y="0" width="316" height="310" />
+        <instance id="2022:7541" name="수강생후기" x="664" y="0" width="316" height="310" />
+      </frame>
+      <frame id="2022:7164" name="Frame 83" x="0" y="168" width="980" height="224" hidden="true">
+        <frame id="2022:7165" name="Frame 70" x="0" y="0" width="233" height="224">
+          <frame id="2022:7166" name="8" x="0" y="0" width="233" height="224">
+            <instance id="2022:7167" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+            <frame id="2022:7168" name="Frame 72" x="24" y="24" width="185" height="48">
+              <frame id="2022:7169" name="Frame 73" x="0" y="0" width="48" height="48">
+                <instance id="2022:7170" name="finance &amp; ecommerce/coins-swap-01" x="12" y="12" width="24" height="24" />
+              </frame>
+              <frame id="2022:7171" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+              <frame id="2022:7173" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+                <frame id="2022:7174" name="Elemento" x="0" y="0" width="60" height="60">
+                  <frame id="2022:7175" name="twitter" x="10" y="10" width="40" height="40" />
+                  <frame id="2022:7177" name="twitter" x="10" y="10" width="40" height="40" />
+                  <ellipse id="2022:7179" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+                </frame>
+                <ellipse id="2022:7180" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+              </frame>
+            </frame>
+            <frame id="2022:7181" name="Frame 71" x="24" y="96" width="185" height="28">
+              <instance id="2022:7182" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+              <text id="2022:7183" name="최대 90% 환급" x="0" y="0" width="185" height="28" />
+            </frame>
+            <text id="2022:7184" name="환급대상이라면 실부담금은 정가 대비 1/10까지 낮아져요" x="24" y="148" width="185" height="52" />
+          </frame>
+        </frame>
+        <frame id="2022:7185" name="Frame 71" x="249" y="0" width="233" height="224">
+          <frame id="2022:7186" name="8" x="0" y="0" width="233" height="224">
+            <instance id="2022:7187" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+            <frame id="2022:7188" name="Frame 72" x="24" y="24" width="185" height="48">
+              <frame id="2022:7189" name="Frame 73" x="0" y="0" width="48" height="48">
+                <instance id="2022:7190" name="education/book-open-02" x="12" y="12" width="24" height="24" />
+              </frame>
+              <frame id="2022:7191" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+              <frame id="2022:7193" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+                <frame id="2022:7194" name="Elemento" x="0" y="0" width="60" height="60">
+                  <frame id="2022:7195" name="twitter" x="10" y="10" width="40" height="40" />
+                  <frame id="2022:7197" name="twitter" x="10" y="10" width="40" height="40" />
+                  <ellipse id="2022:7199" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+                </frame>
+                <ellipse id="2022:7200" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+              </frame>
+            </frame>
+            <frame id="2022:7201" name="Frame 71" x="24" y="96" width="185" height="28">
+              <instance id="2022:7202" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+              <text id="2022:7203" name="오프라인 실습 몰입" x="0" y="0" width="185" height="28" />
+            </frame>
+            <text id="2022:7204" name="오프라인 실습 교육에서 배우면서 바로 써먹어 보세요" x="24" y="148" width="185" height="52" />
+          </frame>
+        </frame>
+        <frame id="2022:7205" name="8" x="498" y="0" width="233" height="224">
+          <instance id="2022:7206" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+          <frame id="2022:7207" name="Frame 72" x="24" y="24" width="185" height="48">
+            <frame id="2022:7208" name="Frame 73" x="0" y="0" width="48" height="48">
+              <instance id="2022:7209" name="maps &amp; travel/flag-04" x="12" y="12" width="24" height="24" />
+            </frame>
+            <frame id="2022:7210" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+            <frame id="2022:7212" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+              <frame id="2022:7213" name="Elemento" x="0" y="0" width="60" height="60">
+                <frame id="2022:7214" name="twitter" x="10" y="10" width="40" height="40" />
+                <frame id="2022:7216" name="twitter" x="10" y="10" width="40" height="40" />
+                <ellipse id="2022:7218" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+              </frame>
+              <ellipse id="2022:7219" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+            </frame>
+          </frame>
+          <frame id="2022:7220" name="Frame 71" x="24" y="96" width="185" height="28">
+            <instance id="2022:7221" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+            <text id="2022:7222" name="AX · 직무 스킬 · 리더십" x="0" y="0" width="185" height="28" />
+          </frame>
+          <text id="2022:7223" name="다양한 직무 / 직급 / 업무에 적합한 주제를 골라 신청하세요" x="24" y="148" width="185" height="52" />
+        </frame>
+        <frame id="2022:7224" name="9" x="747" y="0" width="233" height="224">
+          <instance id="2022:7225" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+          <frame id="2022:7226" name="Frame 72" x="24" y="24" width="185" height="48">
+            <frame id="2022:7227" name="Frame 73" x="0" y="0" width="48" height="48">
+              <instance id="2022:7228" name="users/users-01" x="12" y="12" width="24" height="24" />
+            </frame>
+            <frame id="2022:7229" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+            <frame id="2022:7231" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+              <frame id="2022:7232" name="Elemento" x="0" y="0" width="60" height="60">
+                <frame id="2022:7233" name="twitter" x="10" y="10" width="40" height="40" />
+                <frame id="2022:7235" name="twitter" x="10" y="10" width="40" height="40" />
+                <ellipse id="2022:7237" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+              </frame>
+              <ellipse id="2022:7238" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+            </frame>
+          </frame>
+          <frame id="2022:7239" name="Frame 71" x="24" y="96" width="185" height="28">
+            <instance id="2022:7240" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+            <text id="2022:7241" name="검증된 전문 강사진" x="0" y="0" width="142" height="28" />
+          </frame>
+          <text id="2022:7242" name="기업 교육으로 이미 검증받은 전문 강사진이 가르쳐요" x="24" y="148" width="185" height="52" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="2031:2611" name="7" x="0" y="4601" width="1920" height="1170">
+    <frame id="2031:2612" name="Frame 28" x="470" y="120" width="980" height="930">
+      <frame id="2031:2613" name="Frame 37" x="0" y="0" width="980" height="95">
+        <text id="2031:2614" name="실전처럼 배우는 몰입형 강의장" x="0" y="0" width="324" height="39" />
+        <frame id="2031:2615" name="Frame 55" x="0" y="43" width="279" height="52">
+          <text id="2031:2616" name="노트북과 실습용 AI 계정까지 모두 준비돼 있어, 오시는 순간부터 바로 실습을 시작할 수 있어요." x="0" y="0" width="279" height="52" />
+          <text id="2031:2617" name="#ChatGPT #Copilot #Make" x="466" y="0" width="181" height="26" hidden="true" />
+        </frame>
+      </frame>
+      <frame id="2031:2618" name="Frame 92" x="0" y="127" width="980" height="326">
+        <frame id="2031:2619" name="Frame 88" x="0" y="0" width="980" height="58">
+          <frame id="2031:2620" name="Frame 86" x="0" y="0" width="486" height="58" hidden="true">
+            <frame id="2031:2621" name="Frame 75" x="24" y="17" width="24" height="24">
+              <text id="2031:2622" name="AX" x="5" y="5" width="14" height="14" />
+            </frame>
+            <text id="2031:2623" name="AX 실무 교육" x="56" y="16" width="82" height="26" />
+          </frame>
+          <frame id="2031:2624" name="Frame 87" x="329.3333435058594" y="0" width="321.33331298828125" height="58" hidden="true">
+            <frame id="2031:2625" name="Frame 75" x="20" y="10" width="30" height="30" hidden="true">
+              <text id="2031:2626" name="BIZ" x="6.5" y="6.5" width="17" height="17" />
+            </frame>
+            <frame id="2031:2627" name="Frame 76" x="24" y="17" width="24" height="24">
+              <text id="2031:2628" name="BIZ" x="5" y="5" width="14" height="14" />
+            </frame>
+            <text id="2031:2629" name="비즈니스 직무·스킬" x="56" y="16" width="115" height="26" />
+          </frame>
+          <frame id="2031:2630" name="Frame 88" x="494" y="0" width="239" height="58" hidden="true">
+            <frame id="2031:2631" name="Frame 75" x="20" y="10" width="30" height="30" hidden="true">
+              <text id="2031:2632" name="LEAD" x="1" y="6.5" width="28" height="17" />
+            </frame>
+            <frame id="2031:2633" name="Frame 76" x="24" y="17" width="31" height="24">
+              <text id="2031:2634" name="LEAD" x="4" y="5" width="23" height="14" />
+            </frame>
+            <text id="2031:2635" name="직급별 리더십" x="63" y="16" width="84" height="26" />
+          </frame>
+          <instance id="2031:2644" name="tab" x="0" y="0" width="980" height="58" hidden="true" />
+          <instance id="2031:2653" name="tab" x="0" y="0" width="980" height="58">
+            <frame id="0:367" name="underline" x="0" y="57" width="980" height="1" hidden="true" />
+            <instance id="0:368" name="button-ghost-icon" x="0" y="16" width="28" height="28" hidden="true" />
+            <slot id="0:369" name="Slot" x="0" y="0" width="980" height="58">
+              <instance id="0:370" name="_item/tab" x="0" y="0" width="82" height="58" />
+              <instance id="0:373" name="_item/tab" x="114" y="0" width="115" height="58" />
+              <instance id="0:376" name="_item/tab" x="261" y="0" width="84" height="58" />
+              <instance id="0:379" name="_item/tab" x="377" y="0" width="23" height="58" hidden="true" />
+              <instance id="0:380" name="_item/tab" x="377" y="0" width="23" height="58" hidden="true" />
+              <instance id="0:381" name="_item/tab" x="377" y="0" width="23" height="58" hidden="true" />
+              <instance id="0:382" name="_item/tab" x="377" y="0" width="23" height="58" hidden="true" />
+            </slot>
+            <instance id="0:383" name="button-ghost-icon" x="732" y="16" width="28" height="28" hidden="true" />
+          </instance>
+        </frame>
+        <frame id="2031:2654" name="Frame 91" x="0" y="74" width="980" height="252">
+          <frame id="2031:2655" name="Frame 89" x="32" y="32" width="488" height="188">
+            <text id="2031:2656" name="업무 방식을 바꾸는 AI 실무교육" x="0" y="0" width="488" height="68" />
+            <text id="2031:2657" name="Claude·Gemini·ChatGPT 등 주요 AI 툴을 통해 데이터 분석, 마케팅 콘텐츠,  업무 자동화, AI 서비스 개발까지 — 실제 업무에 AI를 적용해 워크플로우를 혁신합니다." x="0" y="84" width="488" height="48" />
+            <frame id="2031:2658" name="Frame 90" x="0" y="148" width="488" height="40">
+              <instance id="2031:2659" name="chips-item" x="0" y="0" width="71" height="40" />
+              <instance id="2031:2660" name="chips-item" x="79" y="0" width="71" height="40" />
+              <instance id="2031:2661" name="chips-item" x="158" y="0" width="86" height="40" />
+              <instance id="2031:2662" name="chips-item" x="252" y="0" width="86" height="40" />
+              <instance id="2031:2663" name="chips-item" x="346" y="0" width="86" height="40" />
+              <instance id="2031:2664" name="chips-item" x="440" y="0" width="48" height="40" />
+            </frame>
+          </frame>
+          <rounded-rectangle id="2031:2665" name="Rectangle 90" x="580" y="32" width="368" height="188" />
+        </frame>
+      </frame>
+      <frame id="2031:2666" name="Frame 70" x="0" y="485" width="980" height="445">
+        <instance id="2031:2667" name="썸네일" x="0" y="0" width="316" height="445" />
+        <instance id="2031:2668" name="썸네일" x="332" y="0" width="316" height="445" />
+        <instance id="2031:2669" name="썸네일" x="664" y="0" width="316" height="445" />
+      </frame>
+      <frame id="2031:2670" name="Frame 36" x="454" y="398" width="72" height="8" hidden="true">
+        <frame id="2031:2671" name="Frame 23" x="0" y="0" width="8" height="8" />
+        <frame id="2031:2672" name="Frame 24" x="16" y="0" width="8" height="8" />
+        <frame id="2031:2673" name="Frame 25" x="32" y="0" width="8" height="8" />
+        <frame id="2031:2674" name="Frame 26" x="48" y="0" width="8" height="8" />
+        <frame id="2031:2675" name="Frame 27" x="64" y="0" width="8" height="8" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="2031:2827" name="8" x="0" y="5771" width="1920" height="660">
+    <frame id="2031:2828" name="Frame 28" x="470" y="120" width="980" height="420">
+      <frame id="2031:2829" name="Frame 37" x="0" y="0" width="980" height="78">
+        <text id="2031:2830" name="대기업·공공기관 기업교육으로 이미 검증된 전문 강사진" x="0" y="0" width="320" height="78" />
+        <frame id="2031:2831" name="Frame 55" x="0" y="82" width="458" height="26" hidden="true">
+          <text id="2031:2832" name="AI 실무부터 직무 스킬, 직급별 리더십까지 — 목적에 맞는 트랙을 골라보세요." x="0" y="0" width="458" height="26" />
+        </frame>
+      </frame>
+      <frame id="2031:2833" name="Frame 98" x="0" y="110" width="980" height="310">
+        <instance id="2031:3055" name="전문강사진" x="0" y="0" width="316" height="310" />
+        <instance id="2031:3074" name="전문강사진" x="332" y="0" width="316" height="310" />
+        <instance id="2031:3093" name="전문강사진" x="664" y="0" width="316" height="310" />
+      </frame>
+      <frame id="2031:2837" name="Frame 83" x="0" y="168" width="980" height="224" hidden="true">
+        <frame id="2031:2838" name="Frame 70" x="0" y="0" width="233" height="224">
+          <frame id="2031:2839" name="8" x="0" y="0" width="233" height="224">
+            <instance id="2031:2840" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+            <frame id="2031:2841" name="Frame 72" x="24" y="24" width="185" height="48">
+              <frame id="2031:2842" name="Frame 73" x="0" y="0" width="48" height="48">
+                <instance id="2031:2843" name="finance &amp; ecommerce/coins-swap-01" x="12" y="12" width="24" height="24" />
+              </frame>
+              <frame id="2031:2844" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+              <frame id="2031:2846" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+                <frame id="2031:2847" name="Elemento" x="0" y="0" width="60" height="60">
+                  <frame id="2031:2848" name="twitter" x="10" y="10" width="40" height="40" />
+                  <frame id="2031:2850" name="twitter" x="10" y="10" width="40" height="40" />
+                  <ellipse id="2031:2852" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+                </frame>
+                <ellipse id="2031:2853" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+              </frame>
+            </frame>
+            <frame id="2031:2854" name="Frame 71" x="24" y="96" width="185" height="28">
+              <instance id="2031:2855" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+              <text id="2031:2856" name="최대 90% 환급" x="0" y="0" width="185" height="28" />
+            </frame>
+            <text id="2031:2857" name="환급대상이라면 실부담금은 정가 대비 1/10까지 낮아져요" x="24" y="148" width="185" height="52" />
+          </frame>
+        </frame>
+        <frame id="2031:2858" name="Frame 71" x="249" y="0" width="233" height="224">
+          <frame id="2031:2859" name="8" x="0" y="0" width="233" height="224">
+            <instance id="2031:2860" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+            <frame id="2031:2861" name="Frame 72" x="24" y="24" width="185" height="48">
+              <frame id="2031:2862" name="Frame 73" x="0" y="0" width="48" height="48">
+                <instance id="2031:2863" name="education/book-open-02" x="12" y="12" width="24" height="24" />
+              </frame>
+              <frame id="2031:2864" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+              <frame id="2031:2866" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+                <frame id="2031:2867" name="Elemento" x="0" y="0" width="60" height="60">
+                  <frame id="2031:2868" name="twitter" x="10" y="10" width="40" height="40" />
+                  <frame id="2031:2870" name="twitter" x="10" y="10" width="40" height="40" />
+                  <ellipse id="2031:2872" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+                </frame>
+                <ellipse id="2031:2873" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+              </frame>
+            </frame>
+            <frame id="2031:2874" name="Frame 71" x="24" y="96" width="185" height="28">
+              <instance id="2031:2875" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+              <text id="2031:2876" name="오프라인 실습 몰입" x="0" y="0" width="185" height="28" />
+            </frame>
+            <text id="2031:2877" name="오프라인 실습 교육에서 배우면서 바로 써먹어 보세요" x="24" y="148" width="185" height="52" />
+          </frame>
+        </frame>
+        <frame id="2031:2878" name="8" x="498" y="0" width="233" height="224">
+          <instance id="2031:2879" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+          <frame id="2031:2880" name="Frame 72" x="24" y="24" width="185" height="48">
+            <frame id="2031:2881" name="Frame 73" x="0" y="0" width="48" height="48">
+              <instance id="2031:2882" name="maps &amp; travel/flag-04" x="12" y="12" width="24" height="24" />
+            </frame>
+            <frame id="2031:2883" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+            <frame id="2031:2885" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+              <frame id="2031:2886" name="Elemento" x="0" y="0" width="60" height="60">
+                <frame id="2031:2887" name="twitter" x="10" y="10" width="40" height="40" />
+                <frame id="2031:2889" name="twitter" x="10" y="10" width="40" height="40" />
+                <ellipse id="2031:2891" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+              </frame>
+              <ellipse id="2031:2892" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+            </frame>
+          </frame>
+          <frame id="2031:2893" name="Frame 71" x="24" y="96" width="185" height="28">
+            <instance id="2031:2894" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+            <text id="2031:2895" name="AX · 직무 스킬 · 리더십" x="0" y="0" width="185" height="28" />
+          </frame>
+          <text id="2031:2896" name="다양한 직무 / 직급 / 업무에 적합한 주제를 골라 신청하세요" x="24" y="148" width="185" height="52" />
+        </frame>
+        <frame id="2031:2897" name="9" x="747" y="0" width="233" height="224">
+          <instance id="2031:2898" name="Iconly/Glass/Clock" x="40" y="40" width="236" height="58.77577209472656" hidden="true" />
+          <frame id="2031:2899" name="Frame 72" x="24" y="24" width="185" height="48">
+            <frame id="2031:2900" name="Frame 73" x="0" y="0" width="48" height="48">
+              <instance id="2031:2901" name="users/users-01" x="12" y="12" width="24" height="24" />
+            </frame>
+            <frame id="2031:2902" name="alarm-fill" x="42" y="0" width="32" height="32" hidden="true" />
+            <frame id="2031:2904" name="Twitter" x="70" y="0" width="60" height="60" hidden="true">
+              <frame id="2031:2905" name="Elemento" x="0" y="0" width="60" height="60">
+                <frame id="2031:2906" name="twitter" x="10" y="10" width="40" height="40" />
+                <frame id="2031:2908" name="twitter" x="10" y="10" width="40" height="40" />
+                <ellipse id="2031:2910" name="Ellipse 1" x="16.25" y="51.25" width="28.75" height="16.25" />
+              </frame>
+              <ellipse id="2031:2911" name="Ellipse 2" x="10" y="10" width="22.5" height="22.5" />
+            </frame>
+          </frame>
+          <frame id="2031:2912" name="Frame 71" x="24" y="96" width="185" height="28">
+            <instance id="2031:2913" name="💸 Money With Wings (Money, Cash, Banknote)" x="0" y="0" width="64" height="64" hidden="true" />
+            <text id="2031:2914" name="검증된 전문 강사진" x="0" y="0" width="142" height="28" />
+          </frame>
+          <text id="2031:2915" name="기업 교육으로 이미 검증받은 전문 강사진이 가르쳐요" x="24" y="148" width="185" height="52" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="2001:1108" name="3" x="0" y="6431" width="1920" height="354">
+    <frame id="2001:1109" name="Frame 44" x="0" y="0" width="1920" height="354">
+      <frame id="2001:1110" name="Frame 44" x="470" y="80" width="980" height="194">
+        <frame id="2001:1111" name="Frame 47" x="327" y="0" width="326" height="136">
+          <text id="2001:1112" name="휴넷이 완벽하게 전담 지원합니다 지금 필요한 실무교육을 확인하세요!" x="1.5" y="0" width="323" height="68" />
+          <text id="2001:1113" name="과정 상담부터 교육 운영 및 수료처리, 복잡한 행정 절차까지 —  신청만 해주시면 나머지는 휴넷이 처리합니다." x="0" y="92" width="326" height="44" />
+        </frame>
+        <frame id="2001:1114" name="Frame 48" x="301.5" y="160" width="377" height="34">
+          <frame id="2001:1115" name="Frame 46" x="0" y="0" width="76" height="34">
+            <text id="2001:1116" name="#온라인" x="16" y="6" width="44" height="22" />
+          </frame>
+          <frame id="2001:1117" name="Frame 47" x="84" y="0" width="87" height="34">
+            <text id="2001:1118" name="#오프라인" x="16" y="6" width="55" height="22" />
+          </frame>
+          <frame id="2001:1119" name="Frame 48" x="179" y="0" width="114" height="34">
+            <text id="2001:1120" name="#원데이 클래스" x="16" y="6" width="82" height="22" />
+          </frame>
+          <frame id="2001:1121" name="Frame 49" x="301" y="0" width="76" height="34">
+            <text id="2001:1122" name="#맞춤형" x="16" y="6" width="44" height="22" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2001:1123" name="Frame 45" x="1284" y="99" width="166" height="34" hidden="true">
+        <text id="2001:1124" name="기업교육 문의" x="0" y="0" width="126" height="34" />
+        <instance id="2001:1125" name="arrows/arrow-narrow-right" x="134" y="1" width="32" height="32" />
+      </frame>
+    </frame>
+  </frame>
+</frame>
+IMPORTANT: After you call this tool, you MUST call get_design_context if trying to implement the design, since this tool only returns metadata. If you do not call get_design_context, the agent will not be able to implement the design.

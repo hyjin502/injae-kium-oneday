@@ -1,0 +1,139 @@
+<section class="section-lecture">
+  <div class="container">
+    <div class="lecture-header">
+      <div class="lecture-heading">
+        <h2 class="lecture-title">실전처럼 배우는<br>몰입형 강의장</h2>
+        <p class="lecture-subtitle">
+          노트북과 실습용 AI 계정까지 모두 준비돼 있어,<br>
+          오시는 순간부터 바로 실습을 시작할 수 있어요.
+        </p>
+      </div>
+      <div class="lecture-nav">
+        <button type="button" class="lecture-nav-btn lecture-nav-prev" data-lecture-prev aria-label="이전 이미지">
+          <img src="../img/nav-prev.svg" alt="">
+        </button>
+        <button type="button" class="lecture-nav-btn lecture-nav-next" data-lecture-next aria-label="다음 이미지">
+          <img src="../img/nav-next.svg" alt="">
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="lecture-carousel-bleed">
+    <div class="lecture-carousel" data-lecture-carousel>
+      <!-- 실제 이미지 5장을 아래 5개 슬라이드의 img src에 넣어주세요 (venue-1.jpg ~ venue-5.jpg) -->
+      <div class="lecture-track" data-lecture-track>
+        <div class="lecture-slide" data-lecture-slide><span class="lecture-slide-placeholder">1</span></div>
+        <div class="lecture-slide" data-lecture-slide><span class="lecture-slide-placeholder">2</span></div>
+        <div class="lecture-slide" data-lecture-slide><span class="lecture-slide-placeholder">3</span></div>
+        <div class="lecture-slide" data-lecture-slide><span class="lecture-slide-placeholder">4</span></div>
+        <div class="lecture-slide" data-lecture-slide><span class="lecture-slide-placeholder">5</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lecture-facts-wrap">
+    <div class="lecture-facts">
+      <div class="lecture-fact">
+        <div class="lecture-fact-icon"><img src="../img/icons/schedule.png" alt=""></div>
+        <div class="lecture-fact-text">
+          <p class="lecture-fact-label">시간 부담 없는 1day 클래스</p>
+          <p class="lecture-fact-value">1일 · 6~8H</p>
+        </div>
+      </div>
+      <div class="lecture-fact">
+        <div class="lecture-fact-icon"><img src="../img/icons/group.png" alt=""></div>
+        <div class="lecture-fact-text">
+          <p class="lecture-fact-label">소수 정예 오프라인 실습교육</p>
+          <p class="lecture-fact-value">최대 25명</p>
+        </div>
+      </div>
+      <div class="lecture-fact">
+        <div class="lecture-fact-icon lecture-fact-icon--square"><img src="../img/icons/laptop.png" alt=""></div>
+        <div class="lecture-fact-text">
+          <p class="lecture-fact-label">가볍게 몸만 오면 되는 교육</p>
+          <p class="lecture-fact-value">노트북·AI계정</p>
+        </div>
+      </div>
+      <div class="lecture-fact">
+        <div class="lecture-fact-icon"><img src="../img/icons/support.png" alt=""></div>
+        <div class="lecture-fact-text">
+          <p class="lecture-fact-label">기업 교육 전문 휴넷 인프라</p>
+          <p class="lecture-fact-value">전문 강사·현장 운영자</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var carousel = document.querySelector('[data-lecture-carousel]');
+  if (!carousel) return;
+  var track = carousel.querySelector('[data-lecture-track]');
+  var baseSlides = Array.prototype.slice.call(track.querySelectorAll('[data-lecture-slide]'));
+  var total = baseSlides.length;
+  if (!total) return;
+
+  // rebuild the track as [before-clones][originals][after-clones] so it can
+  // scroll indefinitely in either direction and snap back invisibly between copies
+  function cloneSet() {
+    return baseSlides.map(function (slide) {
+      var clone = slide.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      return clone;
+    });
+  }
+  var ordered = cloneSet().concat(baseSlides, cloneSet());
+  var fragment = document.createDocumentFragment();
+  ordered.forEach(function (node) { fragment.appendChild(node); });
+  track.innerHTML = '';
+  track.appendChild(fragment);
+
+  var offset = total; // start on the middle (real) copy
+  var prevBtn = document.querySelector('[data-lecture-prev]');
+  var nextBtn = document.querySelector('[data-lecture-next]');
+  var timer;
+
+  function step() {
+    var slide = track.children[0];
+    var trackStyle = getComputedStyle(track);
+    var gap = parseFloat(trackStyle.columnGap || trackStyle.gap || 0);
+    return slide.getBoundingClientRect().width + gap;
+  }
+
+  function render(withTransition) {
+    track.style.transition = withTransition ? 'transform 0.5s ease' : 'none';
+    track.style.transform = 'translateX(' + (-offset * step()) + 'px)';
+  }
+
+  function settle() {
+    if (offset >= total * 2) {
+      offset -= total;
+      render(false);
+    } else if (offset < total) {
+      offset += total;
+      render(false);
+    }
+  }
+
+  function go(dir) {
+    offset += dir;
+    render(true);
+  }
+
+  function restartAutoplay() {
+    clearInterval(timer);
+    timer = setInterval(function () { go(1); }, 3500);
+  }
+
+  track.addEventListener('transitionend', settle);
+  window.addEventListener('resize', function () { render(false); });
+
+  if (nextBtn) nextBtn.addEventListener('click', function () { go(1); restartAutoplay(); });
+  if (prevBtn) prevBtn.addEventListener('click', function () { go(-1); restartAutoplay(); });
+
+  render(false);
+  restartAutoplay();
+})();
+</script>

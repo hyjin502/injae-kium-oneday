@@ -1,0 +1,196 @@
+/* Section 7 — 실전처럼 배우는 몰입형 강의장 */
+
+.section-lecture {
+  padding: 120px 0;
+  background: var(--color-white);
+}
+
+/* Figma spec: this section's content column is 980px, not the shared 1200px container */
+.section-lecture .container {
+  max-width: 980px;
+}
+
+.lecture-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.lecture-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lecture-title {
+  font-size: 28px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: var(--tracking-tighter, -0.7px);
+  color: #171719;
+}
+
+.lecture-subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5, -0.5px);
+  color: #46474c;
+}
+
+.lecture-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.lecture-nav-btn {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+.lecture-nav-btn img { width: 100%; height: 100%; display: block; }
+
+/* Breaks the carousel out of the 980px column so it bleeds edge-to-edge
+   across the full viewport on both sides (header above stays inside the
+   normal container). */
+.lecture-carousel-bleed {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.lecture-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.lecture-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  will-change: transform;
+}
+
+.lecture-slide {
+  flex: 0 0 480px;
+  aspect-ratio: 13 / 8;
+  border-radius: 24px;
+  background: #d9d9d9;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .lecture-slide { flex-basis: 360px; }
+}
+
+@media (max-width: 640px) {
+  .lecture-slide { flex-basis: 280px; }
+}
+
+.lecture-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lecture-slide-placeholder {
+  font-family: var(--font-family);
+  font-size: 32px;
+  font-weight: 700;
+  color: rgba(23, 23, 25, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .lecture-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-lecture { padding: 64px 0; }
+}
+
+.lecture-facts-wrap {
+  width: 100%;
+  max-width: 1100px;
+  margin: 120px auto 0;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.lecture-facts {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.lecture-fact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 138px;
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.lecture-fact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+}
+.lecture-fact-icon img { height: 100%; width: auto; display: block; }
+
+.lecture-fact-icon--square { height: 70px; width: 70px; }
+.lecture-fact-icon--square img { width: 100%; height: 100%; }
+
+.lecture-fact-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.lecture-fact-label {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5, -0.5px);
+  color: rgba(23, 23, 25, 0.6);
+  text-align: center;
+}
+
+.lecture-fact-value {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-tighter, -0.7px);
+  color: #171719;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .lecture-facts { flex-wrap: wrap; }
+  .lecture-fact { flex: 1 0 calc(50% - 12px); }
+}
+
+@media (max-width: 480px) {
+  .lecture-fact { flex: 1 0 100%; }
+}

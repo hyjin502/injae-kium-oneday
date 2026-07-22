@@ -1,0 +1,90 @@
+.site-footer {
+  position: relative;
+  width: 100%;
+  background: #171719;
+  overflow: hidden;
+}
+
+/* subtle blue-on-black glow, echoing the dark hero-style background used
+   elsewhere on the site (hero icon marquee glow) */
+.footer-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(560px 320px at 18% 0%, rgba(51, 133, 255, 0.28), transparent 70%),
+    radial-gradient(480px 300px at 85% 100%, rgba(51, 133, 255, 0.18), transparent 70%);
+}
+
+.footer-cta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 24px;
+}
+
+.footer-cta__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.footer-cta__headline {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-tighter);
+}
+
+.footer-cta__body {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-cta__btn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 56px;
+  padding: 0 80px;
+  border: none;
+  border-radius: 12px;
+  background: var(--color-blue-accent, #3385ff);
+  color: var(--color-white);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: var(--tracking-tight-5);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.footer-cta__btn-icon {
+  width: 11px;
+  height: 20px;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .footer-cta__btn {
+    width: 100%;
+    padding: 0 24px;
+    justify-content: center;
+  }
+  .footer-cta__btn span {
+    white-space: normal;
+    text-align: center;
+  }
+}

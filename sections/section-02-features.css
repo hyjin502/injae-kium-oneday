@@ -1,0 +1,80 @@
+/* Section 2 — 배워서 더 잘해내고 싶었지만, 그동안 망설였던 이유 */
+
+.section-features {
+  width: 100%;
+  background: var(--color-white);
+  padding: 120px 0;
+}
+
+.features-head {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.features-title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-tighter);
+  color: #171719;
+  margin-bottom: 40px;
+}
+
+.features-cards {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  gap: var(--spacing-8);
+}
+
+.feature-card {
+  flex: 1 0 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 40px;
+  border: 1px solid #e1e2e4;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #ebf3ff 0%, var(--color-white) 50%);
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(to bottom, rgba(51, 133, 255, 0.9), rgba(0, 82, 204, 0.9));
+}
+
+.feature-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.feature-card-title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-tighter);
+  color: #171719;
+}
+
+.feature-card-desc {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+  color: rgba(23, 23, 25, 0.6);
+}
+
+.feature-card:nth-child(3) .feature-card-desc {
+  color: rgba(23, 23, 25, 0.8);
+}
