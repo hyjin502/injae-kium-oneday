@@ -47,6 +47,30 @@ img { max-width: 100%; display: block; }
 
 a { text-decoration: none; color: inherit; }
 button { font-family: inherit; cursor: pointer; }
+
+/* Scroll-reveal: fade + slide up once when an element enters the viewport.
+   JS (bottom of page) toggles .is-visible via IntersectionObserver. */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal:nth-child(1) { transition-delay: 0ms; }
+.reveal:nth-child(2) { transition-delay: 90ms; }
+.reveal:nth-child(3) { transition-delay: 180ms; }
+.reveal:nth-child(4) { transition-delay: 270ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 .hero {
   --hero-pad-top: 150px;
   position: relative;
