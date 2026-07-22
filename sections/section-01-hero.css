@@ -73,6 +73,22 @@
   border-radius: var(--radius-lg);
   background: transparent;
   color: var(--color-white);
+  animation: hero-cta-glow 2.6s ease-in-out infinite;
+}
+
+@keyframes hero-cta-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(51, 133, 255, 0);
+    border-color: var(--color-white);
+  }
+  50% {
+    box-shadow: 0 0 22px 4px rgba(51, 133, 255, 0.45);
+    border-color: rgba(51, 133, 255, 0.8);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-cta { animation: none; }
 }
 .hero-cta span {
   font-size: 20px;
