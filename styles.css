@@ -347,19 +347,18 @@ button { font-family: inherit; cursor: pointer; }
     word-break: keep-all;
   }
 
-  /* ---- Icon visual: PC's wide scrolling marquee (2 rows x 14 nodes,
-     126px cards) becomes a static 3x2 grid of 6 real badges. No HTML is
-     added/removed/duplicated — the two marquee rows are flattened via
-     display:contents so their .icon-badge children become direct grid
-     items of .hero-badges, then all but the first 3 real badges per row
-     are hidden (see .icon-marquee-track rule below). ---- */
+  /* ---- Icon visual: keeps PC's rolling marquee behavior (both rows keep
+     scrolling, all 14 real badges stay in the DOM/visible via the loop —
+     nothing is hidden or flattened) — just resized so whole cards fit the
+     narrower mobile width instead of getting cropped mid-card. ---- */
   .hero-badges {
+    /* Desktop hides the marquee entirely below 1100px (see the rule
+       above) — this re-shows it as the flex column it already is by
+       default (base rule), just re-targeted to the mobile order/width. */
+    display: flex;
     order: 4;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
-    width: 100%;
     flex: none;
+    width: 100%;
     min-width: 0;
     margin-right: 0;
     margin-bottom: 24px;
@@ -371,31 +370,10 @@ button { font-family: inherit; cursor: pointer; }
     background: radial-gradient(closest-side, rgba(51, 133, 255, 0.25), rgba(51, 133, 255, 0));
   }
 
-  .icon-marquee,
-  .icon-marquee-track {
-    display: contents;
-  }
-  .icon-marquee-track--a,
-  .icon-marquee-track--b {
-    /* transform/animation has no effect once the track is display:contents
-       (there's no box to animate) — set explicitly for clarity anyway. */
-    animation: none;
-  }
-
-  /* nth-child counts each badge's position among its own track's real DOM
-     children (unaffected by display:contents above), so this keeps each
-     row's first 3 real badges and hides the rest — including every
-     aria-hidden clone, since clones always come after the 7 real ones. */
-  .icon-marquee-track--a .icon-badge:nth-child(n + 4),
-  .icon-marquee-track--b .icon-badge:nth-child(n + 4) {
-    display: none;
-  }
-
   .icon-badge {
-    flex: none;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
+    flex: 0 0 90px;
+    width: 90px;
+    height: 90px;
   }
 
   .hero-cta {
