@@ -150,9 +150,14 @@
   }
 
   /* Cards were fixed at 316px regardless of viewport — stack them full
-     width instead of wrapping a still-316px card onto its own row. */
+     width instead of wrapping a still-316px card onto its own row.
+     .clients-cards had no gap at all (PC relied on justify-content:
+     space-between across a fixed-height row, which does nothing once
+     stacked), so cards were rendering flush against each other — 16px
+     to match .testimonials-row's stacked card gap. */
   .clients-cards {
     flex-direction: column;
+    gap: 16px;
   }
 
   .client-card {
