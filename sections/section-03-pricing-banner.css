@@ -209,3 +209,70 @@
   letter-spacing: var(--tracking-tight-5);
   color: rgba(255, 255, 255, 0.6);
 }
+
+@media (max-width: 767px) {
+  .section-pricing-banner .container {
+    padding: 0 20px;
+  }
+
+  .pricing-card {
+    padding: 24px;
+  }
+
+  /* PC splits course info (left) and price (right) into one row; mobile
+     stacks them, with the price block separated by a divider below. */
+  .pricing-card-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  /* Was nowrap for the PC single-line layout — let the course title wrap
+     instead of forcing it past the card's narrower mobile width. */
+  .pricing-card-course-text {
+    white-space: normal;
+  }
+
+  .pricing-card-right {
+    flex: none;
+    width: 100%;
+    align-items: stretch;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    gap: 12px;
+  }
+
+  .pricing-card-original {
+    width: 100%;
+    text-align: right;
+    white-space: normal;
+  }
+
+  /* Label + price on one row (label left, price right) at the PC's own
+     40px price size. That's wide enough that label+price can't always
+     both fit on one line at the narrowest phones, so wrapping is allowed
+     instead of forcing an overflow — margin-left:auto keeps the price
+     pinned to the right edge whether it shares the line or wraps to its
+     own. */
+  .pricing-card-final {
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* Overrides the base rule's flex-end — otherwise the label ends up
+       pushed to the right when it wraps onto its own line. */
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 4px 8px;
+    width: 100%;
+  }
+
+  .pricing-card-final-label {
+    white-space: normal;
+    word-break: keep-all;
+    text-align: left;
+  }
+
+  .pricing-card-final-price {
+    margin-left: auto;
+  }
+}

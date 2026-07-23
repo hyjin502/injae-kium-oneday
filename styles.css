@@ -504,6 +504,65 @@ button { font-family: inherit; cursor: pointer; }
 .feature-card:nth-child(3) .feature-card-desc {
   color: var(--color-text-tertiary);
 }
+
+@media (max-width: 767px) {
+  .section-features .container {
+    padding: 0 20px;
+  }
+
+  .features-title {
+    font-size: 34px;
+    line-height: 1.25;
+    word-break: keep-all;
+  }
+
+  /* PC's 3-across flex row (flex:1 0 0, no shrink) forced 3 equal cards
+     into ~1/3 of a narrow screen; with 40px padding on each that left
+     ~20-30px for text, wrapping almost word-by-word. Switch to a single
+     column instead. */
+  .features-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .feature-card {
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    padding: 24px;
+    border-radius: var(--radius-lg);
+    /* PC's flex-start shrink-wraps title/desc to their content width;
+       stretch makes them fill the card so text wraps at the full
+       measure instead of a narrower one. */
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .feature-icon {
+    margin-bottom: 16px;
+  }
+
+  .feature-card-title {
+    font-size: 22px;
+    line-height: 1.35;
+    margin-bottom: 12px;
+    word-break: keep-all;
+  }
+
+  .feature-card-desc {
+    font-size: 16px;
+    line-height: 1.65;
+    word-break: keep-all;
+  }
+
+  /* These <br> tags are PC-only line breaks tuned for the 3-column
+     layout; hidden (not removed) so the paragraph wraps naturally at
+     mobile's own measure instead. */
+  .feature-card-desc .pc-break {
+    display: none;
+  }
+}
 /* Section 3 — 중소기업 재직근로자라면, AI · 직무 교육비 최대 90% 환급! */
 
 .section-pricing-banner {
@@ -715,6 +774,73 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: var(--tracking-tight-5);
   color: rgba(255, 255, 255, 0.6);
 }
+
+@media (max-width: 767px) {
+  .section-pricing-banner .container {
+    padding: 0 20px;
+  }
+
+  .pricing-card {
+    padding: 24px;
+  }
+
+  /* PC splits course info (left) and price (right) into one row; mobile
+     stacks them, with the price block separated by a divider below. */
+  .pricing-card-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  /* Was nowrap for the PC single-line layout — let the course title wrap
+     instead of forcing it past the card's narrower mobile width. */
+  .pricing-card-course-text {
+    white-space: normal;
+  }
+
+  .pricing-card-right {
+    flex: none;
+    width: 100%;
+    align-items: stretch;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    gap: 12px;
+  }
+
+  .pricing-card-original {
+    width: 100%;
+    text-align: right;
+    white-space: normal;
+  }
+
+  /* Label + price on one row (label left, price right) at the PC's own
+     40px price size. That's wide enough that label+price can't always
+     both fit on one line at the narrowest phones, so wrapping is allowed
+     instead of forcing an overflow — margin-left:auto keeps the price
+     pinned to the right edge whether it shares the line or wraps to its
+     own. */
+  .pricing-card-final {
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* Overrides the base rule's flex-end — otherwise the label ends up
+       pushed to the right when it wraps onto its own line. */
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 4px 8px;
+    width: 100%;
+  }
+
+  .pricing-card-final-label {
+    white-space: normal;
+    word-break: keep-all;
+    text-align: left;
+  }
+
+  .pricing-card-final-price {
+    margin-left: auto;
+  }
+}
 /* Section 4 - 휴넷 인재키움 혜택 카드 그리드 */
 
 .section-benefits {
@@ -820,6 +946,20 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: var(--tracking-tight-5);
   color: var(--color-text-secondary);
 }
+
+@media (max-width: 767px) {
+  /* PC's fixed 157px row height cropped/cramped text as soon as a card's
+     content wrapped past 2 lines. Rows now hug their own content instead
+     (cards sharing a row still match each other via grid's default
+     stretch, but the two rows are no longer forced to the same height). */
+  .benefits-grid {
+    grid-template-rows: auto;
+  }
+
+  .benefits-card {
+    height: auto;
+  }
+}
 /* Section 5 — AI·직무·리더십 스타일 선택 */
 
 .section-styles {
@@ -860,6 +1000,12 @@ button { font-family: inherit; cursor: pointer; }
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+
+/* Carousel dot indicator (Figma node 2021:1652) — only relevant once the
+   grid becomes a swipeable mobile carousel; see @media block below. */
+.styles-dots {
+  display: none;
 }
 
 /* Course grid */
@@ -1084,6 +1230,79 @@ button { font-family: inherit; cursor: pointer; }
 @media (max-width: 640px) {
   .section-styles {
     padding: 64px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-styles .container {
+    padding: 0 16px;
+  }
+
+  /* Course cards become one continuous, swipeable horizontal row instead
+     of the single-column stack above (that 1024px rule still governs the
+     768-1023px tablet band, unchanged). .styles-panel is now the scroll
+     container; the two .course-grid wrappers are flattened via
+     display:contents (no DOM change) so all 6 cards become its direct
+     flex children and scroll as one row instead of two stacked ones. */
+  .styles-panel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* No extra margin/padding here — the container's own 16px padding
+       above already insets the row correctly. The earlier bleed-and-
+       reapply trick (cancel via negative margin, re-add as padding) made
+       some browsers mis-place the initial scroll-snap position by 16px,
+       flushing the first card against the very edge on load. */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .styles-panel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .course-grid {
+    display: contents;
+  }
+
+  .course-card {
+    scroll-snap-align: start;
+    /* One full card per view, filling the viewport minus the 16px edges
+       on both sides (Figma node 2021:1588). */
+    flex: 0 0 calc(100vw - 32px);
+    width: auto;
+  }
+
+  /* Dot indicator (Figma node 2021:1652) — mirrors which card is
+     currently in view; JS (index.html) toggles .is-active and handles
+     tap-to-jump. Hidden at tablet/desktop, where the grid isn't a
+     carousel. */
+  .styles-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .styles-dot {
+    appearance: none;
+    padding: 0;
+    border: none;
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full, 900px);
+    background: #dbdcdf;
+    flex-shrink: 0;
+  }
+
+  .styles-dot.is-active {
+    background: var(--color-ink);
   }
 }
 /* Section 6 — 휴넷 인재키움 오프라인 교육 수강생 평점 후기 */

@@ -103,3 +103,17 @@
   letter-spacing: var(--tracking-tight-5);
   color: var(--color-text-secondary);
 }
+
+@media (max-width: 767px) {
+  /* PC's fixed 157px row height cropped/cramped text as soon as a card's
+     content wrapped past 2 lines. Rows now hug their own content instead
+     (cards sharing a row still match each other via grid's default
+     stretch, but the two rows are no longer forced to the same height). */
+  .benefits-grid {
+    grid-template-rows: auto;
+  }
+
+  .benefits-card {
+    height: auto;
+  }
+}

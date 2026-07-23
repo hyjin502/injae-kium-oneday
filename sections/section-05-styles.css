@@ -40,6 +40,12 @@
   gap: 32px;
 }
 
+/* Carousel dot indicator (Figma node 2021:1652) — only relevant once the
+   grid becomes a swipeable mobile carousel; see @media block below. */
+.styles-dots {
+  display: none;
+}
+
 /* Course grid */
 .course-grid {
   display: flex;
@@ -262,5 +268,78 @@
 @media (max-width: 640px) {
   .section-styles {
     padding: 64px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-styles .container {
+    padding: 0 16px;
+  }
+
+  /* Course cards become one continuous, swipeable horizontal row instead
+     of the single-column stack above (that 1024px rule still governs the
+     768-1023px tablet band, unchanged). .styles-panel is now the scroll
+     container; the two .course-grid wrappers are flattened via
+     display:contents (no DOM change) so all 6 cards become its direct
+     flex children and scroll as one row instead of two stacked ones. */
+  .styles-panel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* No extra margin/padding here — the container's own 16px padding
+       above already insets the row correctly. The earlier bleed-and-
+       reapply trick (cancel via negative margin, re-add as padding) made
+       some browsers mis-place the initial scroll-snap position by 16px,
+       flushing the first card against the very edge on load. */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .styles-panel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .course-grid {
+    display: contents;
+  }
+
+  .course-card {
+    scroll-snap-align: start;
+    /* One full card per view, filling the viewport minus the 16px edges
+       on both sides (Figma node 2021:1588). */
+    flex: 0 0 calc(100vw - 32px);
+    width: auto;
+  }
+
+  /* Dot indicator (Figma node 2021:1652) — mirrors which card is
+     currently in view; JS (index.html) toggles .is-active and handles
+     tap-to-jump. Hidden at tablet/desktop, where the grid isn't a
+     carousel. */
+  .styles-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .styles-dot {
+    appearance: none;
+    padding: 0;
+    border: none;
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full, 900px);
+    background: #dbdcdf;
+    flex-shrink: 0;
+  }
+
+  .styles-dot.is-active {
+    background: var(--color-ink);
   }
 }

@@ -90,7 +90,7 @@
         </div>
         <h3 class="feature-card-title">교육비가 부담스러워서</h3>
         <p class="feature-card-desc">
-          업무를 위해 듣고 싶은 과정은 있지만, <br />
+          업무를 위해 듣고 싶은 과정은 있지만, <br class="pc-break" />
           가격 앞에서 망설이게 됩니다.
         </p>
       </div>
@@ -109,7 +109,7 @@
         </div>
         <h3 class="feature-card-title">시간 내기가 애매해서</h3>
         <p class="feature-card-desc">
-          일정, 장소, 준비물까지 신경쓰다 보면<br />
+          일정, 장소, 준비물까지 신경쓰다 보면<br class="pc-break" />
           신청할 타이밍을 놓칩니다.
         </p>
       </div>
@@ -219,7 +219,7 @@
       <p class="styles-subtitle">AI 실무부터 직무 스킬, 직급별 리더십까지 — 목적에 맞는 트랙을 골라보세요.</p>
     </header>
 
-    <div class="styles-panel">
+    <div class="styles-panel" data-styles-panel>
       <div class="course-grid">
         <article class="course-card reveal">
           <div class="course-thumb">
@@ -370,8 +370,48 @@
         </article>
       </div>
     </div>
+
+    <div class="styles-dots" data-styles-dots aria-hidden="true">
+      <button type="button" class="styles-dot is-active" data-styles-dot aria-label="1번째 과정으로 이동"></button>
+      <button type="button" class="styles-dot" data-styles-dot aria-label="2번째 과정으로 이동"></button>
+      <button type="button" class="styles-dot" data-styles-dot aria-label="3번째 과정으로 이동"></button>
+      <button type="button" class="styles-dot" data-styles-dot aria-label="4번째 과정으로 이동"></button>
+      <button type="button" class="styles-dot" data-styles-dot aria-label="5번째 과정으로 이동"></button>
+      <button type="button" class="styles-dot" data-styles-dot aria-label="6번째 과정으로 이동"></button>
+    </div>
   </div>
 </section>
+
+<script>
+(function () {
+  // Mobile-only dot indicator for the course-card carousel (see
+  // section-05-styles.css). Hidden via CSS at tablet/desktop widths, so
+  // this is harmless there even though it still runs.
+  var panel = document.querySelector('[data-styles-panel]');
+  var dotsWrap = document.querySelector('[data-styles-dots]');
+  if (!panel || !dotsWrap) return;
+  var cards = Array.prototype.slice.call(panel.querySelectorAll('.course-card'));
+  var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('[data-styles-dot]'));
+  if (!cards.length || cards.length !== dots.length) return;
+
+  dots.forEach(function (dot, i) {
+    dot.addEventListener('click', function () {
+      cards[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+    });
+  });
+
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var idx = cards.indexOf(entry.target);
+      if (idx === -1) return;
+      dots.forEach(function (d, i) { d.classList.toggle('is-active', i === idx); });
+    });
+  }, { root: panel, threshold: 0.6 });
+  cards.forEach(function (c) { io.observe(c); });
+})();
+</script>
 <section class="section-testimonials">
   <div class="container">
     <div class="testimonials-inner">
