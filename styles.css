@@ -1773,6 +1773,30 @@ button { font-family: inherit; cursor: pointer; }
     justify-content: center;
   }
 }
+
+@media (max-width: 767px) {
+  .section-clients .container {
+    padding: 0 20px;
+  }
+
+  /* Cards were fixed at 316px regardless of viewport — stack them full
+     width instead of wrapping a still-316px card onto its own row. */
+  .clients-cards {
+    flex-direction: column;
+  }
+
+  .client-card {
+    width: 100%;
+  }
+
+  .client-card__name,
+  .client-badge,
+  .client-card__lectures-label,
+  .client-card__lectures-value {
+    white-space: normal;
+    word-break: keep-all;
+  }
+}
 .site-footer {
   position: relative;
   width: 100%;
