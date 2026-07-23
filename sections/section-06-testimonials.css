@@ -102,3 +102,24 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 767px) {
+  .section-testimonials .container {
+    padding: 0 20px;
+  }
+
+  /* Cards were fixed at 316px regardless of viewport — stack them full
+     width instead of wrapping a still-316px card onto its own row. */
+  .testimonials-row {
+    flex-direction: column;
+  }
+
+  .testimonial-card {
+    width: 100%;
+  }
+
+  .testimonial-reviewer-name {
+    white-space: normal;
+    word-break: keep-all;
+  }
+}
