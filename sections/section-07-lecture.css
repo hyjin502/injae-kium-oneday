@@ -57,15 +57,17 @@
 }
 .lecture-nav-btn img { width: 100%; height: 100%; display: block; }
 
-/* Breaks the carousel out of the 980px column so it bleeds edge-to-edge
-   across the full viewport on both sides (header above stays inside the
-   normal container). */
+/* Breaks the carousel out of the 980px column so it bleeds to the right
+   edge of the viewport (header above stays inside the normal container);
+   left edge stays aligned with the container's content start, so no
+   partial slide peeks out on the left on first load. */
 .lecture-carousel-bleed {
   position: relative;
   left: 50%;
   width: 100vw;
   transform: translateX(-50%);
-  padding: 0 24px;
+  padding-left: max(24px, calc((100vw - 980px) / 2 + 24px));
+  padding-right: 24px;
   box-sizing: border-box;
 }
 

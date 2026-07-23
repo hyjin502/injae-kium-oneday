@@ -18,6 +18,22 @@
 .pricing-banner-head {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.pricing-banner-kicker {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+  color: var(--color-white);
+}
+
+.pricing-banner-title-group {
+  display: flex;
+  flex-direction: column;
   gap: 4px;
   width: 100%;
 }
