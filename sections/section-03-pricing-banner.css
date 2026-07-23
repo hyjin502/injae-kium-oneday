@@ -3,11 +3,11 @@
 .section-pricing-banner {
   width: 100%;
   background: #0052cc;
-  padding: 120px 0;
+  padding: var(--section-padding-y) 0;
 }
 
 .pricing-banner-inner {
-  max-width: 980px;
+  max-width: var(--container-width-narrow);
   margin: 0 auto;
   display: flex;
   flex-direction: column;

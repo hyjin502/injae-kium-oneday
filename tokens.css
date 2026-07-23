@@ -25,18 +25,58 @@
   --button-height-72: 72px;
 
   --container-width: 1200px;
+  /* Narrow content column used by several sections (Figma spec column,
+     see specs/mobile-spec.md §3/§5) instead of the full 1200px container. */
+  --container-width-narrow: 980px;
+
+  /* Shared vertical rhythm for section wrappers (PC value only — mobile
+     rhythm is defined per-section for now, see specs/mobile-spec.md §3.2). */
+  --section-padding-y: 120px;
+
+  /* Repeated text/border/background colors pulled out of section CSS.
+     Values are unchanged from what was already in use — this only removes
+     duplication, it does not alter any rendered color. */
+  --color-ink: #171719;
+  --color-text-secondary: rgba(23, 23, 25, 0.6);
+  --color-text-tertiary: rgba(23, 23, 25, 0.8);
+  --color-subtle: #46474c;
+  --color-border: #e1e2e4;
+  --color-bg-tint: #f5f9ff;
+
+  /* Card corner radius shared by several card components (distinct from
+     --radius-lg / --radius-2xl, which are already used elsewhere). */
+  --radius-xl: 20px;
+
+  /* Breakpoint reference values (see specs/mobile-spec.md §2). CSS custom
+     properties cannot be read inside an @media condition, so these exist
+     as a single documented source of truth for the numbers that new
+     `@media` rules should use going forward. They do not change any
+     existing media query. */
+  --bp-mobile-max: 767px;
+  --bp-tablet-min: 768px;
+  --bp-tablet-max: 1023px;
+  --bp-desktop-min: 1024px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  overflow-x: hidden;
+}
 
 body {
   font-family: var(--font-family);
   color: var(--color-black);
   background: var(--color-white);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-img { max-width: 100%; display: block; }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
 .container {
   width: 100%;

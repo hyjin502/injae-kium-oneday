@@ -489,6 +489,10 @@
   var total = baseSlides.length;
   if (!total) return;
 
+  // Respect OS-level "reduce motion": no autoplay, slides jump instead of
+  // sliding. Manual prev/next buttons still work either way.
+  var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
   // rebuild the track as [before-clones][originals][after-clones] so it can
   // scroll indefinitely in either direction and snap back invisibly between copies
   function cloneSet() {
@@ -517,7 +521,7 @@
   }
 
   function render(withTransition) {
-    track.style.transition = withTransition ? 'transform 0.5s ease' : 'none';
+    track.style.transition = (withTransition && !reduceMotion) ? 'transform 0.5s ease' : 'none';
     track.style.transform = 'translateX(' + (-offset * step()) + 'px)';
   }
 
@@ -538,6 +542,7 @@
 
   function restartAutoplay() {
     clearInterval(timer);
+    if (reduceMotion) return;
     timer = setInterval(function () { go(1); }, 3500);
   }
 

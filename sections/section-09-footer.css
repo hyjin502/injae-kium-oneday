@@ -1,7 +1,7 @@
 .site-footer {
   position: relative;
   width: 100%;
-  background: #171719;
+  background: var(--color-ink);
   overflow: hidden;
 }
 

@@ -1,6 +1,6 @@
 .section-clients {
-  background: #f5f9ff;
-  padding: 120px 0;
+  background: var(--color-bg-tint);
+  padding: var(--section-padding-y) 0;
 }
 
 .clients-heading {
@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  max-width: 980px;
+  max-width: var(--container-width-narrow);
   margin: 0 auto 32px;
 }
 
@@ -18,7 +18,7 @@
   font-size: 28px;
   line-height: 1.4;
   letter-spacing: var(--tracking-tighter);
-  color: #171719;
+  color: var(--color-ink);
   text-align: left;
 }
 
@@ -27,7 +27,7 @@
   align-items: stretch;
   justify-content: space-between;
   width: 100%;
-  max-width: 980px;
+  max-width: var(--container-width-narrow);
   margin: 0 auto;
 }
 
@@ -39,8 +39,8 @@
   width: 316px;
   padding: 32px;
   background: var(--color-white);
-  border: 1px solid #e1e2e4;
-  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
 }
 
 .client-card__profile {
@@ -71,7 +71,7 @@
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: var(--tracking-tight-5);
-  color: #171719;
+  color: var(--color-ink);
   white-space: nowrap;
 }
 
@@ -104,7 +104,7 @@
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: var(--tracking-tight-5);
-  color: rgba(23, 23, 25, 0.8);
+  color: var(--color-text-tertiary);
 }
 
 .client-card__lectures {
@@ -114,7 +114,7 @@
   gap: 4px;
   width: 100%;
   padding-top: 16px;
-  border-top: 1px solid #e1e2e4;
+  border-top: 1px solid var(--color-border);
 }
 
 .client-card__lectures-label {
@@ -133,7 +133,7 @@
   font-size: 14px;
   line-height: 1.6;
   letter-spacing: var(--tracking-tight-5);
-  color: rgba(23, 23, 25, 0.8);
+  color: var(--color-text-tertiary);
   white-space: nowrap;
 }
 

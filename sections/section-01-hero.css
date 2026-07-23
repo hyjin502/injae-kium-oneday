@@ -170,9 +170,166 @@
   .hero-badges { display: none; }
 }
 
-@media (max-width: 640px) {
-  .hero { padding: 48px 0 64px; }
-  .hero-title { font-size: 34px; }
-  .hero-cta { height: 56px; padding: 0 24px; }
-  .hero-cta span { font-size: 18px; }
+@media (max-width: 767px) {
+  .hero {
+    /* Keep the share button's calc() below correct at the smaller mobile
+       top padding (previously this stayed at the desktop 150px value even
+       though `padding` below was overridden, pushing the button off-screen). */
+    --hero-pad-top: 48px;
+    padding: var(--hero-pad-top) 0 64px;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    /* .hero-copy's children stretch below need this instead of the
+       desktop `center` (which would shrink-to-content and center them). */
+    align-items: stretch;
+    /* Spacing between the reordered items below is handled per-element
+       via margin-bottom instead, so they don't stack on top of a gap. */
+    gap: 0;
+  }
+
+  .hero-inner.container {
+    padding: 0 20px;
+  }
+
+  /* Share button: kept 20px from Hero's own top/right edges (plus any
+     device safe-area inset) via the same negative-offset trick as
+     desktop, just retargeted from 24px to the new 20px rhythm. */
+  .hero-share {
+    top: calc(20px + env(safe-area-inset-top, 0px) - var(--hero-pad-top));
+    right: calc(20px + env(safe-area-inset-right, 0px));
+  }
+
+  /* Un-nests hero-copy's children (eyebrow/title/subtitle/cta) into direct
+     flex items of .hero-inner, alongside .hero-badges — no DOM change —
+     so the `order` values below can place the CTA after the visual. PC
+     leaves .hero-copy as a normal box (this rule doesn't apply there). */
+  .hero-copy {
+    display: contents;
+  }
+
+  /* Reading order: eyebrow -> title -> subtitle -> icon visual -> CTA */
+  .hero-eyebrow {
+    order: 1;
+    font-size: 16px;
+    line-height: 1.4;
+    white-space: normal;
+    word-break: keep-all;
+  }
+
+  .hero-title {
+    order: 2;
+    font-size: clamp(38px, 10.5vw, 42px);
+    line-height: 1.2;
+    word-break: keep-all;
+  }
+
+  .hero-subtitle {
+    order: 3;
+    width: 100%;
+    font-size: 17px;
+    line-height: 1.55;
+    white-space: normal;
+    word-break: keep-all;
+  }
+
+  /* ---- Icon visual: PC's wide scrolling marquee (2 rows x 14 nodes,
+     126px cards) becomes a static 3x2 grid of 6 real badges. No HTML is
+     added/removed/duplicated — the two marquee rows are flattened via
+     display:contents so their .icon-badge children become direct grid
+     items of .hero-badges, then all but the first 3 real badges per row
+     are hidden (see .icon-marquee-track rule below). ---- */
+  .hero-badges {
+    order: 4;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+    flex: none;
+    min-width: 0;
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+
+  .hero-badges-glow {
+    width: 220px;
+    height: 160px;
+    background: radial-gradient(closest-side, rgba(51, 133, 255, 0.25), rgba(51, 133, 255, 0));
+  }
+
+  .icon-marquee,
+  .icon-marquee-track {
+    display: contents;
+  }
+  .icon-marquee-track--a,
+  .icon-marquee-track--b {
+    /* transform/animation has no effect once the track is display:contents
+       (there's no box to animate) — set explicitly for clarity anyway. */
+    animation: none;
+  }
+
+  /* nth-child counts each badge's position among its own track's real DOM
+     children (unaffected by display:contents above), so this keeps each
+     row's first 3 real badges and hides the rest — including every
+     aria-hidden clone, since clones always come after the 7 real ones. */
+  .icon-marquee-track--a .icon-badge:nth-child(n + 4),
+  .icon-marquee-track--b .icon-badge:nth-child(n + 4) {
+    display: none;
+  }
+
+  .icon-badge {
+    flex: none;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .hero-cta {
+    order: 5;
+    width: 100%;
+    height: 52px;
+    padding: 0 24px;
+    border-radius: 14px;
+    justify-content: center;
+    /* Desktop's pulsing glow is too loud for a full-width mobile button —
+       swap it for the entrance fade-in (one-shot, not infinite) plus a
+       thin border + weak static shadow. */
+    animation: hero-mobile-in 0.3s ease 240ms both;
+    box-shadow: 0 2px 8px rgba(51, 133, 255, 0.15);
+  }
+
+  .hero-cta span {
+    font-size: 16px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* Hero is always above the fold, so entrance motion doesn't need scroll
+     detection — a self-playing CSS animation (no JS/observer involved),
+     staggered to match the new visual order above. */
+  @keyframes hero-mobile-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow,
+  .hero-title,
+  .hero-subtitle,
+  .hero-badges {
+    animation: hero-mobile-in 0.3s ease both;
+  }
+  .hero-title { animation-delay: 60ms; }
+  .hero-subtitle { animation-delay: 120ms; }
+  .hero-badges { animation-delay: 180ms; }
+}
+
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  .hero-eyebrow,
+  .hero-title,
+  .hero-subtitle,
+  .hero-badges,
+  .hero-cta {
+    animation: none;
+  }
 }
