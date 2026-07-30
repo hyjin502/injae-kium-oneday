@@ -135,6 +135,15 @@ button { font-family: inherit; cursor: pointer; }
   .mo-break {
     display: block;
   }
+
+  /* Blanket fix for Korean text splitting mid-word at mobile widths (e.g.
+     "실무" breaking into "실"/"무") — CJK line-breaking defaults to
+     per-character breaks, so every text-bearing element needs keep-all
+     unless a more specific rule already overrides it. Cheaper to set once
+     here than to patch each class that turns out to wrap badly. */
+  body {
+    word-break: keep-all;
+  }
 }
 
 /* ==========================================================================
@@ -567,7 +576,6 @@ button { font-family: inherit; cursor: pointer; }
 
 @media (max-width: 767px) {
   .features-title {
-    font-size: 34px;
     line-height: 1.25;
     word-break: keep-all;
   }
@@ -902,6 +910,7 @@ button { font-family: inherit; cursor: pointer; }
   .pricing-banner-subtitle {
     word-break: keep-all;
   }
+
 
   .pricing-card {
     padding: 24px;
@@ -1906,6 +1915,7 @@ button { font-family: inherit; cursor: pointer; }
   }
 
   .client-card__name,
+  .client-card__desc,
   .client-card__lectures-label,
   .client-card__lectures-value {
     white-space: normal;
@@ -2016,7 +2026,7 @@ button { font-family: inherit; cursor: pointer; }
   }
 
   .footer-cta__headline {
-    font-size: 24px;
+    word-break: keep-all;
   }
 
   .footer-cta__actions {
@@ -2205,6 +2215,10 @@ button { font-family: inherit; cursor: pointer; }
   display: none;
 }
 
+.floating-cta__btn-text--short {
+  display: none;
+}
+
 .floating-cta__actions {
   display: flex;
   align-items: center;
@@ -2268,6 +2282,14 @@ button { font-family: inherit; cursor: pointer; }
   }
 
   .floating-cta__text--short {
+    display: inline;
+  }
+
+  .floating-cta__btn-text--full {
+    display: none;
+  }
+
+  .floating-cta__btn-text--short {
     display: inline;
   }
 
