@@ -1,7 +1,7 @@
 :root {
   --color-black: #000000;
   --color-white: #ffffff;
-  --color-blue-accent: #3385ff;
+  --color-accent-green: #00c88a;
   --color-red-cardinal: #FF4B4B;
   --color-red-crab: #FF7878;
 
@@ -38,13 +38,10 @@
   --color-text-tertiary: rgba(23, 23, 25, 0.8);
   --color-subtle: #46474c;
   --color-border: #e1e2e4;
-  --color-bg-tint: #f5f9ff;
   /* background/bg-page (HDS) — new for FAQ, see design-tokens skill */
   --color-bg-page: #f7f7f8;
-  /* brand/company-primary (HDS) — the actual brand blue (#0066ff) used by
-     the floating CTA per Figma. Distinct from --color-blue-accent
-     (#3385ff), which is already used everywhere else on the PC page —
-     left untouched to avoid recoloring existing, working elements. */
+  /* brand/company-primary (HDS) — the brand blue (#0066ff) used by the
+     floating CTA and the course-card "직무" badge. */
   --color-brand-primary: #0066ff;
 
   --radius-xl: 20px;
@@ -117,6 +114,15 @@ button { font-family: inherit; cursor: pointer; }
    unless a section specifically needs its own rule; desktop (1024+) is
    untouched by anything in this block.
    ========================================================================== */
+/* Mobile-only manual line break (Figma review comments) — inverse of
+   .pc-break: inert at tablet/desktop, only takes effect inside the
+   mobile media query below. Declared here, before that media query, so
+   the override below correctly wins at mobile widths (equal specificity,
+   later in source wins). */
+.mo-break {
+  display: none;
+}
+
 @media (max-width: 767px) {
   :root {
     --section-padding-y: 72px;
@@ -124,6 +130,10 @@ button { font-family: inherit; cursor: pointer; }
 
   .container {
     padding: 0 16px;
+  }
+
+  .mo-break {
+    display: block;
   }
 }
 
@@ -173,18 +183,18 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 20px;
   font-weight: 500;
   letter-spacing: var(--tracking-tighter);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .hero-title {
   color: var(--color-white);
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 700;
   line-height: 1.4;
   letter-spacing: var(--tracking-tighter);
-  margin-bottom: 24px;
+  margin-bottom: 72px;
 }
-.hero-title .accent { color: var(--color-blue-accent); }
+.hero-title .accent { color: var(--color-accent-green); white-space: nowrap; }
 
 .hero-subtitle {
   color: var(--color-white);
@@ -195,32 +205,66 @@ button { font-family: inherit; cursor: pointer; }
   margin-bottom: 40px;
 }
 
+.hero-subtitle strong {
+  font-weight: 700;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+}
+
 .hero-cta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   height: var(--button-height-72);
   padding: 0 40px;
-  border: 1px solid var(--color-white);
+  border: 1px solid transparent;
   border-radius: var(--radius-lg);
   background: transparent;
   color: var(--color-white);
+}
+
+.hero-cta--primary {
+  background: #00c88a;
+  transition: background-color 0.15s ease;
+  animation: hero-cta-primary-glow 2.6s ease-in-out infinite;
+}
+
+@keyframes hero-cta-primary-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 200, 138, 0); }
+  50% { box-shadow: 0 0 24px 6px rgba(0, 200, 138, 0.5); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-cta--primary:hover {
+    background: #00a875;
+  }
+}
+
+.hero-cta--outline {
+  border-color: var(--color-white);
   animation: hero-cta-glow 2.6s ease-in-out infinite;
 }
 
 @keyframes hero-cta-glow {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(51, 133, 255, 0);
+    box-shadow: 0 0 0 0 rgba(0, 200, 138, 0);
     border-color: var(--color-white);
   }
   50% {
-    box-shadow: 0 0 22px 4px rgba(51, 133, 255, 0.45);
-    border-color: rgba(51, 133, 255, 0.8);
+    box-shadow: 0 0 22px 4px rgba(0, 200, 138, 0.45);
+    border-color: rgba(0, 200, 138, 0.8);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-cta { animation: none; }
+  .hero-cta--outline,
+  .hero-cta--primary {
+    animation: none;
+  }
 }
 .hero-cta span {
   font-size: 20px;
@@ -247,7 +291,7 @@ button { font-family: inherit; cursor: pointer; }
   width: 420px;
   height: 260px;
   transform: translate(-50%, -50%);
-  background: radial-gradient(closest-side, rgba(51, 133, 255, 0.55), rgba(51, 133, 255, 0));
+  background: radial-gradient(closest-side, rgba(0, 200, 138, 0.55), rgba(0, 200, 138, 0));
   filter: blur(48px);
   pointer-events: none;
   z-index: 0;
@@ -372,10 +416,16 @@ button { font-family: inherit; cursor: pointer; }
     margin-bottom: 24px;
   }
 
+  /* Sized larger than the icon cluster (343x200 at 375px) on purpose —
+     the icon tiles are opaque, so a glow that fits *inside* their bounds
+     is entirely hidden behind them. PC gets away with a same-size glow
+     because its -80px bleed margin leaves icon-free space beside the
+     marquee for it to show through; mobile has no such gap, so the glow
+     needs to spill past the icons' edges into the surrounding black. */
   .hero-badges-glow {
-    width: 220px;
-    height: 160px;
-    background: radial-gradient(closest-side, rgba(51, 133, 255, 0.25), rgba(51, 133, 255, 0));
+    width: 300px;
+    height: 240px;
+    background: radial-gradient(closest-side, rgba(0, 200, 138, 0.4), rgba(0, 200, 138, 0));
   }
 
   .icon-badge {
@@ -384,15 +434,21 @@ button { font-family: inherit; cursor: pointer; }
     height: 90px;
   }
 
-  .hero-cta {
+  .hero-ctas {
     order: 5;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    animation: hero-mobile-in 0.3s ease 240ms both;
+  }
+
+  .hero-cta {
     width: 100%;
     height: 52px;
     padding: 0 24px;
     border-radius: 14px;
     justify-content: center;
-    animation: hero-mobile-in 0.3s ease 240ms both;
-    box-shadow: 0 2px 8px rgba(51, 133, 255, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 200, 138, 0.15);
   }
 
   .hero-cta span {
@@ -422,7 +478,7 @@ button { font-family: inherit; cursor: pointer; }
   .hero-title,
   .hero-subtitle,
   .hero-badges,
-  .hero-cta {
+  .hero-ctas {
     animation: none;
   }
 }
@@ -469,7 +525,7 @@ button { font-family: inherit; cursor: pointer; }
   padding: 40px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  background: linear-gradient(to bottom, #ebf3ff 0%, var(--color-white) 50%);
+  background: linear-gradient(to bottom, #f1fffa 0%, var(--color-white) 50%);
 }
 
 .feature-icon {
@@ -479,7 +535,7 @@ button { font-family: inherit; cursor: pointer; }
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: linear-gradient(to bottom, rgba(51, 133, 255, 0.9), rgba(0, 82, 204, 0.9));
+  background: linear-gradient(to bottom, rgba(0, 200, 138, 0.9), rgba(0, 169, 116, 0.9));
 }
 
 .feature-icon img {
@@ -564,7 +620,7 @@ button { font-family: inherit; cursor: pointer; }
    ========================================================================== */
 .section-pricing-banner {
   width: 100%;
-  background: #0052cc;
+  background: #19b585;
   padding: var(--section-padding-y) 0;
 }
 
@@ -622,9 +678,61 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 700;
 }
 
+.pricing-banner-stats {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  width: 100%;
+}
+
+.pricing-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 0 0;
+  min-width: 0;
+  gap: 8px;
+  padding: 20px 24px;
+  background: #00aa75;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius-lg);
+}
+
+.pricing-stat-label-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pricing-stat-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.pricing-stat-label {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
+.pricing-stat-value {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-tighter);
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
 .pricing-card {
   width: 100%;
-  background: #003d99;
+  background: #008d61;
   border-radius: var(--radius-lg);
   padding: 32px 40px 40px;
 }
@@ -666,7 +774,7 @@ button { font-family: inherit; cursor: pointer; }
   width: 64px;
   height: 64px;
   border-radius: 10.667px;
-  background: var(--color-blue-accent);
+  background: var(--color-accent-green);
   font-family: var(--font-family);
   font-weight: 700;
   font-size: 26.667px;
@@ -715,20 +823,23 @@ button { font-family: inherit; cursor: pointer; }
 .pricing-card-original-label {
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 18px;
-  line-height: 1.6;
-  letter-spacing: var(--tracking-tight-5);
-  color: rgba(255, 255, 255, 0.45);
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-tighter);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .pricing-card-original-price {
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 1.4;
   letter-spacing: var(--tracking-tighter);
-  color: rgba(255, 255, 255, 0.45);
-  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pricing-card-original-won {
+  font-size: 18px;
 }
 
 .pricing-card-final {
@@ -763,6 +874,17 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 20px;
 }
 
+.pricing-card-final-note {
+  width: 100%;
+  text-align: right;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .pricing-banner-footnote {
   font-family: var(--font-family);
   font-weight: 400;
@@ -773,6 +895,14 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 @media (max-width: 767px) {
+  /* Without this, CJK line-breaking treats every character as a break
+     point, so "환급!" was splitting mid-word into "환" / "급!". */
+  .pricing-banner-kicker,
+  .pricing-banner-title,
+  .pricing-banner-subtitle {
+    word-break: keep-all;
+  }
+
   .pricing-card {
     padding: 24px;
   }
@@ -806,7 +936,7 @@ button { font-family: inherit; cursor: pointer; }
   .pricing-card-final {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: baseline;
     gap: 4px 8px;
     width: 100%;
@@ -815,11 +945,25 @@ button { font-family: inherit; cursor: pointer; }
   .pricing-card-final-label {
     white-space: normal;
     word-break: keep-all;
-    text-align: left;
+    text-align: right;
   }
 
-  .pricing-card-final-price {
-    margin-left: auto;
+  .pricing-card-final-note {
+    font-size: 13px;
+  }
+
+  .pricing-banner-stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pricing-stat {
+    width: 100%;
+    padding: 16px 20px;
+  }
+
+  .pricing-stat-value {
+    font-size: 20px;
   }
 }
 
@@ -827,7 +971,7 @@ button { font-family: inherit; cursor: pointer; }
    Section 4 — 휴넷 인재키움 혜택 카드 그리드
    ========================================================================== */
 .section-benefits {
-  background: var(--color-bg-tint);
+  background: rgba(0, 200, 138, 0.06);
   padding: var(--section-padding-y) 0;
 }
 
@@ -859,7 +1003,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .benefits-title-accent {
-  color: var(--color-blue-accent);
+  color: var(--color-accent-green);
 }
 
 .benefits-subtitle {
@@ -881,7 +1025,7 @@ button { font-family: inherit; cursor: pointer; }
 
 .benefits-card {
   background: var(--color-white);
-  border: 1px solid #cce0ff;
+  border: 1px solid #ccf2d9;
   border-radius: var(--radius-xl);
   padding: 24px 24px 32px;
   display: flex;
@@ -904,7 +1048,7 @@ button { font-family: inherit; cursor: pointer; }
   justify-content: center;
   align-self: flex-start;
   padding: 0 10px;
-  background: var(--color-blue-accent);
+  background: var(--color-accent-green);
   border-radius: 900px;
   font-weight: 500;
   font-size: 12px;
@@ -1080,7 +1224,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .badge-brand {
-  color: var(--color-blue-accent, #0066ff);
+  color: var(--color-brand-primary);
   background: rgba(0, 102, 255, 0.06);
 }
 
@@ -1140,20 +1284,23 @@ button { font-family: inherit; cursor: pointer; }
 
 .course-price {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 8px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
   width: 100%;
 }
 
 .price-original {
   position: relative;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   letter-spacing: var(--tracking-tight-5, -0.5px);
   color: var(--color-text-secondary);
-  text-decoration: line-through;
-  text-decoration-color: var(--color-text-secondary);
+}
+
+.price-final-label {
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .price-final {
@@ -1186,8 +1333,8 @@ button { font-family: inherit; cursor: pointer; }
 
 @media (hover: hover) and (pointer: fine) {
   .course-btn:hover {
-    background: var(--color-blue-accent, #3385ff);
-    border-color: var(--color-blue-accent, #3385ff);
+    background: var(--color-accent-green);
+    border-color: var(--color-accent-green);
     color: var(--color-white);
   }
 }
@@ -1204,6 +1351,10 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 @media (max-width: 767px) {
+  .styles-title {
+    word-break: keep-all;
+  }
+
   /* Course cards become one continuous, swipeable horizontal row instead
      of the single-column stack above (the 1024px rule still governs the
      768-1023px tablet band, unchanged). .styles-panel is the scroll
@@ -1277,7 +1428,7 @@ button { font-family: inherit; cursor: pointer; }
    Section 6 — 휴넷 인재키움 오프라인 교육 수강생 평점 후기
    ========================================================================== */
 .section-testimonials {
-  background: var(--color-bg-tint);
+  background: linear-gradient(to bottom, #ebfaf0, #ebfafc);
   padding: var(--section-padding-y) 0;
   width: 100%;
 }
@@ -1304,7 +1455,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .testimonials-heading-accent {
-  color: var(--color-blue-accent);
+  color: var(--color-accent-green);
 }
 
 .testimonials-row {
@@ -1511,6 +1662,28 @@ button { font-family: inherit; cursor: pointer; }
   }
 }
 
+.lecture-address {
+  width: 100%;
+  max-width: var(--container-width-narrow);
+  margin: 24px auto 0;
+  padding: 0 24px;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+  color: var(--color-subtle);
+}
+
+.lecture-address strong {
+  display: inline-block;
+  margin-bottom: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
 .lecture-facts-wrap {
   width: 100%;
   max-width: 1100px;
@@ -1581,6 +1754,15 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 @media (max-width: 767px) {
+  .lecture-address {
+    padding: 0 16px;
+    font-size: 14px;
+  }
+
+  .lecture-address strong {
+    font-size: 16px;
+  }
+
   .lecture-facts-wrap {
     margin-top: 72px;
   }
@@ -1590,7 +1772,7 @@ button { font-family: inherit; cursor: pointer; }
    Section 8 — 강사진
    ========================================================================== */
 .section-clients {
-  background: var(--color-bg-tint);
+  background: linear-gradient(to bottom, #ebfaf0, #ebfafc);
   padding: var(--section-padding-y) 0;
 }
 
@@ -1666,28 +1848,6 @@ button { font-family: inherit; cursor: pointer; }
   white-space: nowrap;
 }
 
-.client-card__badges {
-  display: flex;
-  gap: 8px;
-}
-
-.client-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 20px;
-  padding: 0 6px;
-  border-radius: 900px;
-  background: rgba(0, 102, 255, 0.06);
-  font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.6;
-  letter-spacing: var(--tracking-tight-5);
-  color: var(--color-blue-accent);
-  white-space: nowrap;
-}
-
 .client-card__desc {
   width: 100%;
   font-family: var(--font-family);
@@ -1746,7 +1906,6 @@ button { font-family: inherit; cursor: pointer; }
   }
 
   .client-card__name,
-  .client-badge,
   .client-card__lectures-label,
   .client-card__lectures-value {
     white-space: normal;
@@ -1769,8 +1928,8 @@ button { font-family: inherit; cursor: pointer; }
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(560px 320px at 18% 0%, rgba(51, 133, 255, 0.28), transparent 70%),
-    radial-gradient(480px 300px at 85% 100%, rgba(51, 133, 255, 0.18), transparent 70%);
+    radial-gradient(560px 320px at 18% 0%, rgba(0, 200, 138, 0.28), transparent 70%),
+    radial-gradient(480px 300px at 85% 100%, rgba(0, 200, 138, 0.18), transparent 70%);
 }
 
 .footer-cta {
@@ -1809,16 +1968,21 @@ button { font-family: inherit; cursor: pointer; }
   color: rgba(255, 255, 255, 0.8);
 }
 
+.footer-cta__actions {
+  display: flex;
+  gap: 16px;
+}
+
 .footer-cta__btn {
   appearance: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
   height: 56px;
-  padding: 0 80px;
-  border: none;
+  padding: 0 40px;
+  border: 1px solid transparent;
   border-radius: 12px;
-  background: var(--color-blue-accent, #3385ff);
   color: var(--color-white);
   font-family: var(--font-family);
   font-weight: 500;
@@ -1828,9 +1992,19 @@ button { font-family: inherit; cursor: pointer; }
   cursor: pointer;
 }
 
+.footer-cta__btn--primary {
+  background: #00c88a;
+}
+
+.footer-cta__btn--outline {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.3);
+  padding: 0 80px;
+}
+
 .footer-cta__btn-icon {
-  width: 11px;
-  height: 20px;
+  width: 9px;
+  height: 15px;
   object-fit: contain;
 }
 
@@ -1845,7 +2019,14 @@ button { font-family: inherit; cursor: pointer; }
     font-size: 24px;
   }
 
-  .footer-cta__btn {
+  .footer-cta__actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .footer-cta__btn,
+  .footer-cta__btn--outline {
     width: 100%;
     padding: 0 24px;
     justify-content: center;
@@ -2013,6 +2194,17 @@ button { font-family: inherit; cursor: pointer; }
   white-space: nowrap;
 }
 
+.floating-cta__text-accent {
+  color: var(--color-accent-green);
+}
+
+/* Full message on PC/tablet; a shorter version replaces it on mobile,
+   where the floating bar is too narrow for the full copy. Same
+   unconditional-rule-before-media-query pattern as .mo-break/.pc-break. */
+.floating-cta__text--short {
+  display: none;
+}
+
 .floating-cta__actions {
   display: flex;
   align-items: center;
@@ -2040,7 +2232,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .floating-cta__btn--dark {
-  background: var(--color-brand-primary);
+  background: var(--color-accent-green);
   color: var(--color-white);
 }
 
@@ -2049,35 +2241,41 @@ button { font-family: inherit; cursor: pointer; }
     background: #e8e8e8;
   }
   .floating-cta__btn--dark:hover {
-    background: #0052cc;
+    background: #00a875;
   }
 }
 
 @media (max-width: 767px) {
+  /* Keep the same single-row shape as PC (text left, buttons right) —
+     just tightened to fit a narrow viewport instead of switching to a
+     stacked layout. */
   .floating-cta {
     padding: 0 16px 16px;
   }
 
   .floating-cta__inner {
-    flex-direction: column;
-    align-items: stretch;
     min-height: 0;
-    padding: 16px;
+    padding: 12px 16px;
     gap: 12px;
   }
 
   .floating-cta__text {
-    text-align: center;
-    white-space: normal;
-    font-size: 14px;
+    font-size: 15px;
+  }
+
+  .floating-cta__text--full {
+    display: none;
+  }
+
+  .floating-cta__text--short {
+    display: inline;
   }
 
   .floating-cta__actions {
-    width: 100%;
+    gap: 6px;
   }
 
   .floating-cta__btn {
-    flex: 1;
-    padding: 0 12px;
+    padding: 0 16px;
   }
 }
