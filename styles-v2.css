@@ -401,7 +401,7 @@ button { font-family: inherit; cursor: pointer; }
 
   .hero-title {
     order: 2;
-    font-size: clamp(38px, 10.5vw, 42px);
+    font-size: 32px;
     line-height: 1.2;
     word-break: keep-all;
   }
@@ -1364,27 +1364,15 @@ button { font-family: inherit; cursor: pointer; }
     word-break: keep-all;
   }
 
-  /* Course cards become one continuous, swipeable horizontal row instead
-     of the single-column stack above (the 1024px rule still governs the
-     768-1023px tablet band, unchanged). .styles-panel is the scroll
-     container; the two .course-grid wrappers are flattened via
-     display:contents (no DOM change) so all 6 cards become its direct
-     flex children and scroll as one row. */
+  /* Course cards become a 2-column grid instead of the swipeable
+     horizontal row (the 1024px rule still governs the 768-1023px tablet
+     band, unchanged). .styles-panel is the grid container; the two
+     .course-grid wrappers are flattened via display:contents (no DOM
+     change) so all 6 cards become its direct grid children. */
   .styles-panel {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  .styles-panel::-webkit-scrollbar {
-    display: none;
   }
 
   .course-grid {
@@ -1392,9 +1380,7 @@ button { font-family: inherit; cursor: pointer; }
   }
 
   .course-card {
-    scroll-snap-align: start;
-    flex: 0 0 calc(100vw - 32px);
-    width: auto;
+    width: 100%;
   }
 
   /* Tap target: 40px was under the 48px minimum. */
@@ -1402,34 +1388,11 @@ button { font-family: inherit; cursor: pointer; }
     height: 48px;
   }
 
+  /* No horizontal swipe left in this layout, so the position dots no
+     longer mean anything — hide them (the JS that drives them still
+     runs harmlessly, it just has nothing visible to update). */
   .styles-dots {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 24px;
-  }
-
-  .styles-dot {
-    appearance: none;
-    padding: 0;
-    border: none;
-    width: 8px;
-    height: 8px;
-    border-radius: var(--radius-full, 900px);
-    background: #dbdcdf;
-    flex-shrink: 0;
-    position: relative;
-  }
-  /* Invisible 48x48 hit area centered on the 8px visual dot. */
-  .styles-dot::before {
-    content: '';
-    position: absolute;
-    inset: -20px;
-  }
-
-  .styles-dot.is-active {
-    background: var(--color-ink);
+    display: none;
   }
 }
 
@@ -1492,7 +1455,7 @@ button { font-family: inherit; cursor: pointer; }
   height: 130px;
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: var(--font-18, 16px);
+  font-size: 16px;
   line-height: 1.6;
   letter-spacing: var(--tracking-tight-5);
   color: var(--color-ink);
@@ -1532,6 +1495,10 @@ button { font-family: inherit; cursor: pointer; }
   white-space: nowrap;
 }
 
+.testimonials-dots {
+  display: none;
+}
+
 @media (max-width: 1040px) {
   .testimonials-row {
     flex-wrap: wrap;
@@ -1540,12 +1507,29 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 @media (max-width: 767px) {
+  /* Swipeable horizontal row instead of a vertical stack — one card
+     per view, scroll-snapped, scrollbar hidden. */
   .testimonials-row {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .testimonials-row::-webkit-scrollbar {
+    display: none;
   }
 
   .testimonial-card {
-    width: 100%;
+    scroll-snap-align: start;
+    flex: 0 0 calc(100vw - 32px);
+    width: auto;
   }
 
   .testimonial-reviewer-name {
