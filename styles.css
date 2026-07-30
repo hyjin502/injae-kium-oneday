@@ -1,7 +1,7 @@
 :root {
   --color-black: #000000;
   --color-white: #ffffff;
-  --color-blue-accent: #3385ff;
+  --color-accent-green: #00c88a;
   --color-red-cardinal: #FF4B4B;
   --color-red-crab: #FF7878;
 
@@ -25,33 +25,27 @@
   --button-height-72: 72px;
 
   --container-width: 1200px;
-  /* Narrow content column used by several sections (Figma spec column,
-     see specs/mobile-spec.md §3/§5) instead of the full 1200px container. */
   --container-width-narrow: 980px;
 
-  /* Shared vertical rhythm for section wrappers (PC value only — mobile
-     rhythm is defined per-section for now, see specs/mobile-spec.md §3.2). */
+  /* Shared section vertical rhythm. Redefined to 72px inside the mobile
+     media query below (design-tokens/pc-to-mobile convention) — every
+     section using `padding: var(--section-padding-y) 0` picks that up
+     automatically, no per-section override needed. */
   --section-padding-y: 120px;
 
-  /* Repeated text/border/background colors pulled out of section CSS.
-     Values are unchanged from what was already in use — this only removes
-     duplication, it does not alter any rendered color. */
   --color-ink: #171719;
   --color-text-secondary: rgba(23, 23, 25, 0.6);
   --color-text-tertiary: rgba(23, 23, 25, 0.8);
   --color-subtle: #46474c;
   --color-border: #e1e2e4;
-  --color-bg-tint: #f5f9ff;
+  /* background/bg-page (HDS) — new for FAQ, see design-tokens skill */
+  --color-bg-page: #f7f7f8;
+  /* brand/company-primary (HDS) — the brand blue (#0066ff) used by the
+     floating CTA and the course-card "직무" badge. */
+  --color-brand-primary: #0066ff;
 
-  /* Card corner radius shared by several card components (distinct from
-     --radius-lg / --radius-2xl, which are already used elsewhere). */
   --radius-xl: 20px;
 
-  /* Breakpoint reference values (see specs/mobile-spec.md §2). CSS custom
-     properties cannot be read inside an @media condition, so these exist
-     as a single documented source of truth for the numbers that new
-     `@media` rules should use going forward. They do not change any
-     existing media query. */
   --bp-mobile-max: 767px;
   --bp-tablet-min: 768px;
   --bp-tablet-max: 1023px;
@@ -111,6 +105,41 @@ button { font-family: inherit; cursor: pointer; }
     transition: none;
   }
 }
+
+/* ==========================================================================
+   Global mobile defaults (≤767px). One rule per default instead of scattered
+   per-section overrides — see skill "responsive-from-figma" / "pc-to-mobile":
+   16px horizontal page margin, 72px section vertical padding, 48px minimum
+   tappable height, 14px minimum body text. Tablet (768-1023) defaults to PC
+   unless a section specifically needs its own rule; desktop (1024+) is
+   untouched by anything in this block.
+   ========================================================================== */
+/* Mobile-only manual line break (Figma review comments) — inverse of
+   .pc-break: inert at tablet/desktop, only takes effect inside the
+   mobile media query below. Declared here, before that media query, so
+   the override below correctly wins at mobile widths (equal specificity,
+   later in source wins). */
+.mo-break {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --section-padding-y: 72px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .mo-break {
+    display: block;
+  }
+}
+
+/* ==========================================================================
+   Section 1 — Hero
+   ========================================================================== */
 .hero {
   --hero-pad-top: 150px;
   position: relative;
@@ -154,18 +183,18 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 20px;
   font-weight: 500;
   letter-spacing: var(--tracking-tighter);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .hero-title {
   color: var(--color-white);
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 700;
   line-height: 1.4;
   letter-spacing: var(--tracking-tighter);
-  margin-bottom: 24px;
+  margin-bottom: 72px;
 }
-.hero-title .accent { color: var(--color-blue-accent); }
+.hero-title .accent { color: var(--color-accent-green); white-space: nowrap; }
 
 .hero-subtitle {
   color: var(--color-white);
@@ -176,32 +205,66 @@ button { font-family: inherit; cursor: pointer; }
   margin-bottom: 40px;
 }
 
+.hero-subtitle strong {
+  font-weight: 700;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+}
+
 .hero-cta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   height: var(--button-height-72);
   padding: 0 40px;
-  border: 1px solid var(--color-white);
+  border: 1px solid transparent;
   border-radius: var(--radius-lg);
   background: transparent;
   color: var(--color-white);
+}
+
+.hero-cta--primary {
+  background: #00c88a;
+  transition: background-color 0.15s ease;
+  animation: hero-cta-primary-glow 2.6s ease-in-out infinite;
+}
+
+@keyframes hero-cta-primary-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 200, 138, 0); }
+  50% { box-shadow: 0 0 24px 6px rgba(0, 200, 138, 0.5); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-cta--primary:hover {
+    background: #00a875;
+  }
+}
+
+.hero-cta--outline {
+  border-color: var(--color-white);
   animation: hero-cta-glow 2.6s ease-in-out infinite;
 }
 
 @keyframes hero-cta-glow {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(51, 133, 255, 0);
+    box-shadow: 0 0 0 0 rgba(0, 200, 138, 0);
     border-color: var(--color-white);
   }
   50% {
-    box-shadow: 0 0 22px 4px rgba(51, 133, 255, 0.45);
-    border-color: rgba(51, 133, 255, 0.8);
+    box-shadow: 0 0 22px 4px rgba(0, 200, 138, 0.45);
+    border-color: rgba(0, 200, 138, 0.8);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-cta { animation: none; }
+  .hero-cta--outline,
+  .hero-cta--primary {
+    animation: none;
+  }
 }
 .hero-cta span {
   font-size: 20px;
@@ -221,8 +284,6 @@ button { font-family: inherit; cursor: pointer; }
   margin-right: -80px;
 }
 
-/* soft glow blob behind the icon marquee, referencing the glowing accent
-   behind the logo ticker at nbcamp.spartaclub.kr/pm (.framer-1atk9ka) */
 .hero-badges-glow {
   position: absolute;
   top: 50%;
@@ -230,7 +291,7 @@ button { font-family: inherit; cursor: pointer; }
   width: 420px;
   height: 260px;
   transform: translate(-50%, -50%);
-  background: radial-gradient(closest-side, rgba(51, 133, 255, 0.55), rgba(51, 133, 255, 0));
+  background: radial-gradient(closest-side, rgba(0, 200, 138, 0.55), rgba(0, 200, 138, 0));
   filter: blur(48px);
   pointer-events: none;
   z-index: 0;
@@ -283,48 +344,44 @@ button { font-family: inherit; cursor: pointer; }
   .hero-badges { display: none; }
 }
 
+.hero-reveal.reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
 @media (max-width: 767px) {
   .hero {
-    /* Keep the share button's calc() below correct at the smaller mobile
-       top padding (previously this stayed at the desktop 150px value even
-       though `padding` below was overridden, pushing the button off-screen). */
-    --hero-pad-top: 48px;
-    padding: var(--hero-pad-top) 0 64px;
-    /* Extra breathing room above Hero itself, before its own padding. */
-    margin-top: 40px;
+    --hero-pad-top: 72px;
+    padding: var(--hero-pad-top) 0 72px;
   }
 
   .hero-inner {
     flex-direction: column;
-    /* .hero-copy's children stretch below need this instead of the
-       desktop `center` (which would shrink-to-content and center them). */
     align-items: stretch;
-    /* Spacing between the reordered items below is handled per-element
-       via margin-bottom instead, so they don't stack on top of a gap. */
     gap: 0;
   }
 
-  .hero-inner.container {
-    padding: 0 20px;
-  }
-
-  /* Share button: kept 20px from Hero's own top/right edges (plus any
-     device safe-area inset) via the same negative-offset trick as
-     desktop, just retargeted from 24px to the new 20px rhythm. */
+  /* Tap target: 24px was under the 48px minimum, but doubling the visible
+     button/icon to 48px made it look oversized next to the rest of Hero.
+     Keep the icon's own visual size close to the original and add an
+     invisible 48x48 hit area instead (same trick as .styles-dot below). */
   .hero-share {
     top: calc(20px + env(safe-area-inset-top, 0px) - var(--hero-pad-top));
     right: calc(20px + env(safe-area-inset-right, 0px));
+    width: 24px;
+    height: 24px;
+  }
+  .hero-share::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
   }
 
-  /* Un-nests hero-copy's children (eyebrow/title/subtitle/cta) into direct
-     flex items of .hero-inner, alongside .hero-badges — no DOM change —
-     so the `order` values below can place the CTA after the visual. PC
-     leaves .hero-copy as a normal box (this rule doesn't apply there). */
   .hero-copy {
     display: contents;
   }
 
-  /* Reading order: eyebrow -> title -> subtitle -> icon visual -> CTA */
   .hero-eyebrow {
     order: 1;
     font-size: 16px;
@@ -349,14 +406,7 @@ button { font-family: inherit; cursor: pointer; }
     word-break: keep-all;
   }
 
-  /* ---- Icon visual: keeps PC's rolling marquee behavior (both rows keep
-     scrolling, all 14 real badges stay in the DOM/visible via the loop —
-     nothing is hidden or flattened) — just resized so whole cards fit the
-     narrower mobile width instead of getting cropped mid-card. ---- */
   .hero-badges {
-    /* Desktop hides the marquee entirely below 1100px (see the rule
-       above) — this re-shows it as the flex column it already is by
-       default (base rule), just re-targeted to the mobile order/width. */
     display: flex;
     order: 4;
     flex: none;
@@ -366,10 +416,16 @@ button { font-family: inherit; cursor: pointer; }
     margin-bottom: 24px;
   }
 
+  /* Sized larger than the icon cluster (343x200 at 375px) on purpose —
+     the icon tiles are opaque, so a glow that fits *inside* their bounds
+     is entirely hidden behind them. PC gets away with a same-size glow
+     because its -80px bleed margin leaves icon-free space beside the
+     marquee for it to show through; mobile has no such gap, so the glow
+     needs to spill past the icons' edges into the surrounding black. */
   .hero-badges-glow {
-    width: 220px;
-    height: 160px;
-    background: radial-gradient(closest-side, rgba(51, 133, 255, 0.25), rgba(51, 133, 255, 0));
+    width: 300px;
+    height: 240px;
+    background: radial-gradient(closest-side, rgba(0, 200, 138, 0.4), rgba(0, 200, 138, 0));
   }
 
   .icon-badge {
@@ -378,18 +434,21 @@ button { font-family: inherit; cursor: pointer; }
     height: 90px;
   }
 
-  .hero-cta {
+  .hero-ctas {
     order: 5;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    animation: hero-mobile-in 0.3s ease 240ms both;
+  }
+
+  .hero-cta {
     width: 100%;
     height: 52px;
     padding: 0 24px;
     border-radius: 14px;
     justify-content: center;
-    /* Desktop's pulsing glow is too loud for a full-width mobile button —
-       swap it for the entrance fade-in (one-shot, not infinite) plus a
-       thin border + weak static shadow. */
-    animation: hero-mobile-in 0.3s ease 240ms both;
-    box-shadow: 0 2px 8px rgba(51, 133, 255, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 200, 138, 0.15);
   }
 
   .hero-cta span {
@@ -398,9 +457,6 @@ button { font-family: inherit; cursor: pointer; }
     text-align: center;
   }
 
-  /* Hero is always above the fold, so entrance motion doesn't need scroll
-     detection — a self-playing CSS animation (no JS/observer involved),
-     staggered to match the new visual order above. */
   @keyframes hero-mobile-in {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -422,12 +478,14 @@ button { font-family: inherit; cursor: pointer; }
   .hero-title,
   .hero-subtitle,
   .hero-badges,
-  .hero-cta {
+  .hero-ctas {
     animation: none;
   }
 }
-/* Section 2 — 배워서 더 잘해내고 싶었지만, 그동안 망설였던 이유 */
 
+/* ==========================================================================
+   Section 2 — 배워서 더 잘해내고 싶었지만, 그동안 망설였던 이유
+   ========================================================================== */
 .section-features {
   width: 100%;
   background: var(--color-white);
@@ -467,7 +525,7 @@ button { font-family: inherit; cursor: pointer; }
   padding: 40px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  background: linear-gradient(to bottom, #ebf3ff 0%, var(--color-white) 50%);
+  background: linear-gradient(to bottom, #f1fffa 0%, var(--color-white) 50%);
 }
 
 .feature-icon {
@@ -477,7 +535,7 @@ button { font-family: inherit; cursor: pointer; }
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: linear-gradient(to bottom, rgba(51, 133, 255, 0.9), rgba(0, 82, 204, 0.9));
+  background: linear-gradient(to bottom, rgba(0, 200, 138, 0.9), rgba(0, 169, 116, 0.9));
 }
 
 .feature-icon img {
@@ -508,19 +566,14 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 @media (max-width: 767px) {
-  .section-features .container {
-    padding: 0 20px;
-  }
-
   .features-title {
     font-size: 34px;
     line-height: 1.25;
     word-break: keep-all;
   }
 
-  /* PC's 3-across flex row (flex:1 0 0, no shrink) forced 3 equal cards
-     into ~1/3 of a narrow screen; with 40px padding on each that left
-     ~20-30px for text, wrapping almost word-by-word. Switch to a single
+  /* Fixed-height-ish 3-across row (flex:1 0 0, no shrink) with 40px
+     padding per card left ~20-30px for text on a narrow screen. Single
      column instead. */
   .features-cards {
     display: grid;
@@ -534,9 +587,6 @@ button { font-family: inherit; cursor: pointer; }
     min-width: 0;
     padding: 24px;
     border-radius: var(--radius-lg);
-    /* PC's flex-start shrink-wraps title/desc to their content width;
-       stretch makes them fill the card so text wraps at the full
-       measure instead of a narrower one. */
     align-items: stretch;
     gap: 0;
   }
@@ -558,18 +608,19 @@ button { font-family: inherit; cursor: pointer; }
     word-break: keep-all;
   }
 
-  /* These <br> tags are PC-only line breaks tuned for the 3-column
-     layout; hidden (not removed) so the paragraph wraps naturally at
-     mobile's own measure instead. */
+  /* PC-only line breaks tuned for the 3-column layout; hidden (not
+     removed) so the paragraph wraps naturally at mobile's own measure. */
   .feature-card-desc .pc-break {
     display: none;
   }
 }
-/* Section 3 — 중소기업 재직근로자라면, AI · 직무 교육비 최대 90% 환급! */
 
+/* ==========================================================================
+   Section 3 — 중소기업 재직근로자라면, AI · 직무 교육비 최대 90% 환급!
+   ========================================================================== */
 .section-pricing-banner {
   width: 100%;
-  background: #0052cc;
+  background: #19b585;
   padding: var(--section-padding-y) 0;
 }
 
@@ -627,9 +678,61 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 700;
 }
 
+.pricing-banner-stats {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  width: 100%;
+}
+
+.pricing-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 0 0;
+  min-width: 0;
+  gap: 8px;
+  padding: 20px 24px;
+  background: #00aa75;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius-lg);
+}
+
+.pricing-stat-label-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pricing-stat-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.pricing-stat-label {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
+.pricing-stat-value {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-tighter);
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
 .pricing-card {
   width: 100%;
-  background: #003d99;
+  background: #008d61;
   border-radius: var(--radius-lg);
   padding: 32px 40px 40px;
 }
@@ -671,7 +774,7 @@ button { font-family: inherit; cursor: pointer; }
   width: 64px;
   height: 64px;
   border-radius: 10.667px;
-  background: var(--color-blue-accent);
+  background: var(--color-accent-green);
   font-family: var(--font-family);
   font-weight: 700;
   font-size: 26.667px;
@@ -720,20 +823,23 @@ button { font-family: inherit; cursor: pointer; }
 .pricing-card-original-label {
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 18px;
-  line-height: 1.6;
-  letter-spacing: var(--tracking-tight-5);
-  color: rgba(255, 255, 255, 0.45);
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-tighter);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .pricing-card-original-price {
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 1.4;
   letter-spacing: var(--tracking-tighter);
-  color: rgba(255, 255, 255, 0.45);
-  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pricing-card-original-won {
+  font-size: 18px;
 }
 
 .pricing-card-final {
@@ -768,6 +874,17 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 20px;
 }
 
+.pricing-card-final-note {
+  width: 100%;
+  text-align: right;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .pricing-banner-footnote {
   font-family: var(--font-family);
   font-weight: 400;
@@ -778,24 +895,24 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 @media (max-width: 767px) {
-  .section-pricing-banner .container {
-    padding: 0 20px;
+  /* Without this, CJK line-breaking treats every character as a break
+     point, so "환급!" was splitting mid-word into "환" / "급!". */
+  .pricing-banner-kicker,
+  .pricing-banner-title,
+  .pricing-banner-subtitle {
+    word-break: keep-all;
   }
 
   .pricing-card {
     padding: 24px;
   }
 
-  /* PC splits course info (left) and price (right) into one row; mobile
-     stacks them, with the price block separated by a divider below. */
   .pricing-card-row {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
   }
 
-  /* Was nowrap for the PC single-line layout — let the course title wrap
-     instead of forcing it past the card's narrower mobile width. */
   .pricing-card-course-text {
     white-space: normal;
   }
@@ -816,18 +933,10 @@ button { font-family: inherit; cursor: pointer; }
     white-space: normal;
   }
 
-  /* Label + price on one row (label left, price right) at the PC's own
-     40px price size. That's wide enough that label+price can't always
-     both fit on one line at the narrowest phones, so wrapping is allowed
-     instead of forcing an overflow — margin-left:auto keeps the price
-     pinned to the right edge whether it shares the line or wraps to its
-     own. */
   .pricing-card-final {
     flex-direction: row;
     flex-wrap: wrap;
-    /* Overrides the base rule's flex-end — otherwise the label ends up
-       pushed to the right when it wraps onto its own line. */
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: baseline;
     gap: 4px 8px;
     width: 100%;
@@ -836,17 +945,33 @@ button { font-family: inherit; cursor: pointer; }
   .pricing-card-final-label {
     white-space: normal;
     word-break: keep-all;
-    text-align: left;
+    text-align: right;
   }
 
-  .pricing-card-final-price {
-    margin-left: auto;
+  .pricing-card-final-note {
+    font-size: 13px;
+  }
+
+  .pricing-banner-stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pricing-stat {
+    width: 100%;
+    padding: 16px 20px;
+  }
+
+  .pricing-stat-value {
+    font-size: 20px;
   }
 }
-/* Section 4 - 휴넷 인재키움 혜택 카드 그리드 */
 
+/* ==========================================================================
+   Section 4 — 휴넷 인재키움 혜택 카드 그리드
+   ========================================================================== */
 .section-benefits {
-  background: var(--color-bg-tint);
+  background: rgba(0, 200, 138, 0.06);
   padding: var(--section-padding-y) 0;
 }
 
@@ -878,7 +1003,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .benefits-title-accent {
-  color: var(--color-blue-accent);
+  color: var(--color-accent-green);
 }
 
 .benefits-subtitle {
@@ -900,7 +1025,7 @@ button { font-family: inherit; cursor: pointer; }
 
 .benefits-card {
   background: var(--color-white);
-  border: 1px solid #cce0ff;
+  border: 1px solid #ccf2d9;
   border-radius: var(--radius-xl);
   padding: 24px 24px 32px;
   display: flex;
@@ -923,7 +1048,7 @@ button { font-family: inherit; cursor: pointer; }
   justify-content: center;
   align-self: flex-start;
   padding: 0 10px;
-  background: var(--color-blue-accent);
+  background: var(--color-accent-green);
   border-radius: 900px;
   font-weight: 500;
   font-size: 12px;
@@ -950,27 +1075,28 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 @media (max-width: 767px) {
-  /* PC's fixed 157px row height cropped/cramped text as soon as a card's
-     content wrapped past 2 lines. Rows now hug their own content instead
-     (cards sharing a row still match each other via grid's default
-     stretch, but the two rows are no longer forced to the same height). */
+  /* Fixed 2-column / 157px-row grid → single column, rows hug content
+     instead of being forced to a fixed height. */
   .benefits-grid {
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
+    gap: 16px;
   }
 
   .benefits-card {
     height: auto;
   }
 }
-/* Section 5 — AI·직무·리더십 스타일 선택 */
 
+/* ==========================================================================
+   Section 5 — AI·직무·리더십 스타일 선택
+   ========================================================================== */
 .section-styles {
   width: 100%;
   padding: var(--section-padding-y) 0;
   background: var(--color-white);
 }
 
-/* Figma spec: this section's content column is 980px, not the shared 1200px container */
 .section-styles .container {
   max-width: var(--container-width-narrow);
 }
@@ -997,20 +1123,16 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--color-subtle);
 }
 
-/* Panel holds two rows of course cards, stacked with a 32px gap (Figma: 2021:1587) */
 .styles-panel {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 
-/* Carousel dot indicator (Figma node 2021:1652) — only relevant once the
-   grid becomes a swipeable mobile carousel; see @media block below. */
 .styles-dots {
   display: none;
 }
 
-/* Course grid */
 .course-grid {
   display: flex;
   gap: 16px;
@@ -1045,7 +1167,6 @@ button { font-family: inherit; cursor: pointer; }
   object-fit: cover;
 }
 
-/* Deadline ribbon overlaid on the thumbnail (Figma: e.g. I2022:6528;2125:656) */
 .course-ribbon {
   position: absolute;
   top: 15px;
@@ -1103,7 +1224,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .badge-brand {
-  color: var(--color-blue-accent, #0066ff);
+  color: var(--color-brand-primary);
   background: rgba(0, 102, 255, 0.06);
 }
 
@@ -1163,20 +1284,23 @@ button { font-family: inherit; cursor: pointer; }
 
 .course-price {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 8px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
   width: 100%;
 }
 
 .price-original {
   position: relative;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   letter-spacing: var(--tracking-tight-5, -0.5px);
   color: var(--color-text-secondary);
-  text-decoration: line-through;
-  text-decoration-color: var(--color-text-secondary);
+}
+
+.price-final-label {
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .price-final {
@@ -1207,17 +1331,14 @@ button { font-family: inherit; cursor: pointer; }
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
-/* Hover-only devices: avoids the tap-and-stuck hover state on touch
-   screens (see specs/mobile-spec.md item 6). PC mouse hover is unchanged. */
 @media (hover: hover) and (pointer: fine) {
   .course-btn:hover {
-    background: var(--color-blue-accent, #3385ff);
-    border-color: var(--color-blue-accent, #3385ff);
+    background: var(--color-accent-green);
+    border-color: var(--color-accent-green);
     color: var(--color-white);
   }
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .course-grid {
     flex-direction: column;
@@ -1229,23 +1350,17 @@ button { font-family: inherit; cursor: pointer; }
   }
 }
 
-@media (max-width: 640px) {
-  .section-styles {
-    padding: 64px 0;
-  }
-}
-
 @media (max-width: 767px) {
-  .section-styles .container {
-    padding: 0 16px;
+  .styles-title {
+    word-break: keep-all;
   }
 
   /* Course cards become one continuous, swipeable horizontal row instead
-     of the single-column stack above (that 1024px rule still governs the
-     768-1023px tablet band, unchanged). .styles-panel is now the scroll
+     of the single-column stack above (the 1024px rule still governs the
+     768-1023px tablet band, unchanged). .styles-panel is the scroll
      container; the two .course-grid wrappers are flattened via
      display:contents (no DOM change) so all 6 cards become its direct
-     flex children and scroll as one row instead of two stacked ones. */
+     flex children and scroll as one row. */
   .styles-panel {
     display: flex;
     flex-direction: row;
@@ -1256,11 +1371,6 @@ button { font-family: inherit; cursor: pointer; }
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    /* No extra margin/padding here — the container's own 16px padding
-       above already insets the row correctly. The earlier bleed-and-
-       reapply trick (cancel via negative margin, re-add as padding) made
-       some browsers mis-place the initial scroll-snap position by 16px,
-       flushing the first card against the very edge on load. */
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
@@ -1274,16 +1384,15 @@ button { font-family: inherit; cursor: pointer; }
 
   .course-card {
     scroll-snap-align: start;
-    /* One full card per view, filling the viewport minus the 16px edges
-       on both sides (Figma node 2021:1588). */
     flex: 0 0 calc(100vw - 32px);
     width: auto;
   }
 
-  /* Dot indicator (Figma node 2021:1652) — mirrors which card is
-     currently in view; JS (index.html) toggles .is-active and handles
-     tap-to-jump. Hidden at tablet/desktop, where the grid isn't a
-     carousel. */
+  /* Tap target: 40px was under the 48px minimum. */
+  .course-btn {
+    height: 48px;
+  }
+
   .styles-dots {
     display: flex;
     align-items: center;
@@ -1301,16 +1410,25 @@ button { font-family: inherit; cursor: pointer; }
     border-radius: var(--radius-full, 900px);
     background: #dbdcdf;
     flex-shrink: 0;
+    position: relative;
+  }
+  /* Invisible 48x48 hit area centered on the 8px visual dot. */
+  .styles-dot::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
   }
 
   .styles-dot.is-active {
     background: var(--color-ink);
   }
 }
-/* Section 6 — 휴넷 인재키움 오프라인 교육 수강생 평점 후기 */
 
+/* ==========================================================================
+   Section 6 — 휴넷 인재키움 오프라인 교육 수강생 평점 후기
+   ========================================================================== */
 .section-testimonials {
-  background: var(--color-bg-tint);
+  background: linear-gradient(to bottom, #ebfaf0, #ebfafc);
   padding: var(--section-padding-y) 0;
   width: 100%;
 }
@@ -1337,7 +1455,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .testimonials-heading-accent {
-  color: var(--color-blue-accent);
+  color: var(--color-accent-green);
 }
 
 .testimonials-row {
@@ -1413,12 +1531,6 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 @media (max-width: 767px) {
-  .section-testimonials .container {
-    padding: 0 20px;
-  }
-
-  /* Cards were fixed at 316px regardless of viewport — stack them full
-     width instead of wrapping a still-316px card onto its own row. */
   .testimonials-row {
     flex-direction: column;
   }
@@ -1432,14 +1544,15 @@ button { font-family: inherit; cursor: pointer; }
     word-break: keep-all;
   }
 }
-/* Section 7 — 실전처럼 배우는 몰입형 강의장 */
 
+/* ==========================================================================
+   Section 7 — 실전처럼 배우는 몰입형 강의장
+   ========================================================================== */
 .section-lecture {
   padding: var(--section-padding-y) 0;
   background: var(--color-white);
 }
 
-/* Figma spec: this section's content column is 980px, not the shared 1200px container */
 .section-lecture .container {
   max-width: var(--container-width-narrow);
 }
@@ -1492,9 +1605,7 @@ button { font-family: inherit; cursor: pointer; }
 .lecture-nav-btn img { width: 100%; height: 100%; display: block; }
 
 /* Breaks the carousel out of the 980px column so it bleeds to the right
-   edge of the viewport (header above stays inside the normal container);
-   left edge stays aligned with the container's content start, so no
-   partial slide peeks out on the left on first load. */
+   edge of the viewport (header above stays inside the normal container). */
 .lecture-carousel-bleed {
   position: relative;
   left: 50%;
@@ -1543,13 +1654,6 @@ button { font-family: inherit; cursor: pointer; }
   display: block;
 }
 
-.lecture-slide-placeholder {
-  font-family: var(--font-family);
-  font-size: 32px;
-  font-weight: 700;
-  color: rgba(23, 23, 25, 0.2);
-}
-
 @media (max-width: 1024px) {
   .lecture-header {
     flex-direction: column;
@@ -1558,8 +1662,26 @@ button { font-family: inherit; cursor: pointer; }
   }
 }
 
-@media (max-width: 640px) {
-  .section-lecture { padding: 64px 0; }
+.lecture-address {
+  width: 100%;
+  max-width: var(--container-width-narrow);
+  margin: 24px auto 0;
+  padding: 0 24px;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+  color: var(--color-subtle);
+}
+
+.lecture-address strong {
+  display: inline-block;
+  margin-bottom: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-ink);
 }
 
 .lecture-facts-wrap {
@@ -1630,8 +1752,27 @@ button { font-family: inherit; cursor: pointer; }
 @media (max-width: 480px) {
   .lecture-fact { flex: 1 0 100%; }
 }
+
+@media (max-width: 767px) {
+  .lecture-address {
+    padding: 0 16px;
+    font-size: 14px;
+  }
+
+  .lecture-address strong {
+    font-size: 16px;
+  }
+
+  .lecture-facts-wrap {
+    margin-top: 72px;
+  }
+}
+
+/* ==========================================================================
+   Section 8 — 강사진
+   ========================================================================== */
 .section-clients {
-  background: var(--color-bg-tint);
+  background: linear-gradient(to bottom, #ebfaf0, #ebfafc);
   padding: var(--section-padding-y) 0;
 }
 
@@ -1707,28 +1848,6 @@ button { font-family: inherit; cursor: pointer; }
   white-space: nowrap;
 }
 
-.client-card__badges {
-  display: flex;
-  gap: 8px;
-}
-
-.client-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 20px;
-  padding: 0 6px;
-  border-radius: 900px;
-  background: rgba(0, 102, 255, 0.06);
-  font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.6;
-  letter-spacing: var(--tracking-tight-5);
-  color: var(--color-blue-accent);
-  white-space: nowrap;
-}
-
 .client-card__desc {
   width: 100%;
   font-family: var(--font-family);
@@ -1777,16 +1896,6 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 @media (max-width: 767px) {
-  .section-clients .container {
-    padding: 0 20px;
-  }
-
-  /* Cards were fixed at 316px regardless of viewport — stack them full
-     width instead of wrapping a still-316px card onto its own row.
-     .clients-cards had no gap at all (PC relied on justify-content:
-     space-between across a fixed-height row, which does nothing once
-     stacked), so cards were rendering flush against each other — 16px
-     to match .testimonials-row's stacked card gap. */
   .clients-cards {
     flex-direction: column;
     gap: 16px;
@@ -1797,13 +1906,16 @@ button { font-family: inherit; cursor: pointer; }
   }
 
   .client-card__name,
-  .client-badge,
   .client-card__lectures-label,
   .client-card__lectures-value {
     white-space: normal;
     word-break: keep-all;
   }
 }
+
+/* ==========================================================================
+   Footer CTA
+   ========================================================================== */
 .site-footer {
   position: relative;
   width: 100%;
@@ -1811,15 +1923,13 @@ button { font-family: inherit; cursor: pointer; }
   overflow: hidden;
 }
 
-/* subtle blue-on-black glow, echoing the dark hero-style background used
-   elsewhere on the site (hero icon marquee glow) */
 .footer-glow {
   position: absolute;
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(560px 320px at 18% 0%, rgba(51, 133, 255, 0.28), transparent 70%),
-    radial-gradient(480px 300px at 85% 100%, rgba(51, 133, 255, 0.18), transparent 70%);
+    radial-gradient(560px 320px at 18% 0%, rgba(0, 200, 138, 0.28), transparent 70%),
+    radial-gradient(480px 300px at 85% 100%, rgba(0, 200, 138, 0.18), transparent 70%);
 }
 
 .footer-cta {
@@ -1858,16 +1968,21 @@ button { font-family: inherit; cursor: pointer; }
   color: rgba(255, 255, 255, 0.8);
 }
 
+.footer-cta__actions {
+  display: flex;
+  gap: 16px;
+}
+
 .footer-cta__btn {
   appearance: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
   height: 56px;
-  padding: 0 80px;
-  border: none;
+  padding: 0 40px;
+  border: 1px solid transparent;
   border-radius: 12px;
-  background: var(--color-blue-accent, #3385ff);
   color: var(--color-white);
   font-family: var(--font-family);
   font-weight: 500;
@@ -1877,14 +1992,41 @@ button { font-family: inherit; cursor: pointer; }
   cursor: pointer;
 }
 
+.footer-cta__btn--primary {
+  background: #00c88a;
+}
+
+.footer-cta__btn--outline {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.3);
+  padding: 0 80px;
+}
+
 .footer-cta__btn-icon {
-  width: 11px;
-  height: 20px;
+  width: 9px;
+  height: 15px;
   object-fit: contain;
 }
 
-@media (max-width: 640px) {
-  .footer-cta__btn {
+@media (max-width: 767px) {
+  /* footer-cta carries its own padding (not --section-padding-y), and its
+     horizontal value doesn't come from .container — set both explicitly. */
+  .footer-cta {
+    padding: 72px 16px;
+  }
+
+  .footer-cta__headline {
+    font-size: 24px;
+  }
+
+  .footer-cta__actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .footer-cta__btn,
+  .footer-cta__btn--outline {
     width: 100%;
     padding: 0 24px;
     justify-content: center;
@@ -1895,8 +2037,245 @@ button { font-family: inherit; cursor: pointer; }
   }
 }
 
+/* ==========================================================================
+   FAQ (Figma node 2061:3384) — new section
+   ========================================================================== */
+.section-faq {
+  background: var(--color-bg-page);
+  padding: var(--section-padding-y) 0;
+}
+
+.faq-inner {
+  max-width: var(--container-width-narrow);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.faq-title {
+  width: 100%;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-tighter);
+  color: var(--color-ink);
+}
+
+.faq-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faq-item {
+  width: 100%;
+  background: var(--color-white);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-question {
+  appearance: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 32px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+  color: var(--color-ink);
+  /* Already well over the 48px tap minimum via its own padding, but set a
+     floor explicitly since content length varies per question. */
+  min-height: 48px;
+}
+
+.faq-chevron {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease;
+}
+
+.faq-item.is-open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 32px 24px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+  color: var(--color-text-secondary);
+}
+
 @media (max-width: 767px) {
-  .footer-cta__headline {
-    font-size: 24px;
+  .faq-title {
+    font-size: 22px;
+    line-height: 1.3;
+    word-break: keep-all;
+  }
+
+  .faq-question {
+    padding: 20px 16px;
+    font-size: 15px;
+    gap: 12px;
+  }
+
+  .faq-answer {
+    padding: 0 16px 20px;
+    font-size: 14px;
+  }
+}
+
+/* ==========================================================================
+   Floating CTA bar (Figma node 2251:594, "수강신청플로팅") — new, fixed to
+   the viewport bottom. Hidden until Hero scrolls out of view (JS in
+   index-v2.html), independent of every other script on the page.
+   ========================================================================== */
+.floating-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  padding: 0 24px 16px;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.floating-cta.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-cta {
+    transition: none;
+  }
+}
+
+.floating-cta__inner {
+  max-width: var(--container-width-narrow);
+  margin: 0 auto;
+  min-height: 76px;
+  background: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 4px 2px rgba(12, 12, 13, 0.1), 0 4px 2px rgba(12, 12, 13, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  gap: 16px;
+}
+
+.floating-cta__text {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-tight-5);
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+.floating-cta__text-accent {
+  color: var(--color-accent-green);
+}
+
+/* Full message on PC/tablet; a shorter version replaces it on mobile,
+   where the floating bar is too narrow for the full copy. Same
+   unconditional-rule-before-media-query pattern as .mo-break/.pc-break. */
+.floating-cta__text--short {
+  display: none;
+}
+
+.floating-cta__actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.floating-cta__btn {
+  appearance: none;
+  border: none;
+  height: 48px;
+  padding: 0 20px;
+  border-radius: 4px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: var(--tracking-tight-5);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.floating-cta__btn--light {
+  background: #f4f4f4;
+  color: #20222d;
+}
+
+.floating-cta__btn--dark {
+  background: var(--color-accent-green);
+  color: var(--color-white);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .floating-cta__btn--light:hover {
+    background: #e8e8e8;
+  }
+  .floating-cta__btn--dark:hover {
+    background: #00a875;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Keep the same single-row shape as PC (text left, buttons right) —
+     just tightened to fit a narrow viewport instead of switching to a
+     stacked layout. */
+  .floating-cta {
+    padding: 0 16px 16px;
+  }
+
+  .floating-cta__inner {
+    min-height: 0;
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .floating-cta__text {
+    font-size: 15px;
+  }
+
+  .floating-cta__text--full {
+    display: none;
+  }
+
+  .floating-cta__text--short {
+    display: inline;
+  }
+
+  .floating-cta__actions {
+    gap: 6px;
+  }
+
+  .floating-cta__btn {
+    padding: 0 16px;
   }
 }
