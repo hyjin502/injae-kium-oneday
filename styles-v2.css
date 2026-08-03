@@ -1400,6 +1400,14 @@ button { font-family: inherit; cursor: pointer; }
     width: auto;
   }
 
+  /* Each swipe row's cards sit side by side in one glance, so the
+     generic .reveal:nth-child stagger (0/90/180ms, line ~96) makes them
+     pop in one at a time instead of together — override it back to 0
+     for every card in a row. */
+  .course-card.reveal {
+    transition-delay: 0ms;
+  }
+
   /* Tap target: 40px was under the 48px minimum. */
   .course-btn {
     height: 48px;
