@@ -1366,23 +1366,38 @@ button { font-family: inherit; cursor: pointer; }
     word-break: keep-all;
   }
 
-  /* Course cards become a 2-column grid instead of the swipeable
-     horizontal row (the 1024px rule still governs the 768-1023px tablet
-     band, unchanged). .styles-panel is the grid container; the two
-     .course-grid wrappers are flattened via display:contents (no DOM
-     change) so all 6 cards become its direct grid children. */
+  /* Course cards become two stacked horizontal-swipe rows (3 cards per
+     row) instead of one tall 2-column grid (the 1024px rule still
+     governs the 768-1023px tablet band, unchanged). .styles-panel just
+     stacks the two .course-grid rows; each .course-grid is its own
+     independent scroll-snap track. */
   .styles-panel {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .course-grid {
-    display: contents;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .course-grid::-webkit-scrollbar {
+    display: none;
   }
 
   .course-card {
-    width: 100%;
+    scroll-snap-align: start;
+    flex: 0 0 78%;
+    width: auto;
   }
 
   /* Tap target: 40px was under the 48px minimum. */
@@ -1390,9 +1405,10 @@ button { font-family: inherit; cursor: pointer; }
     height: 48px;
   }
 
-  /* No horizontal swipe left in this layout, so the position dots no
-     longer mean anything — hide them (the JS that drives them still
-     runs harmlessly, it just has nothing visible to update). */
+  /* Each row scrolls independently now, so the single shared dot strip
+     (built for one long horizontal track) no longer maps to anything —
+     hide it (the JS that drives them still runs harmlessly, it just has
+     nothing visible to update). */
   .styles-dots {
     display: none;
   }
@@ -1726,7 +1742,8 @@ button { font-family: inherit; cursor: pointer; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 12px;
   height: 138px;
   flex: 1 0 0;
   min-width: 0;
