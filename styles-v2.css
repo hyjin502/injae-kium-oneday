@@ -1333,14 +1333,21 @@ button { font-family: inherit; cursor: pointer; }
   }
 }
 
-@media (max-width: 1024px) {
-  .course-grid {
-    flex-direction: column;
+/* Tablet (768-1023px): two columns rather than the full-width single column
+   this band used to get. The course thumbnail is now a designed banner with
+   fixed 16:9 proportions, so a full-width card renders a ~400px-tall image
+   that dwarfs the text under it. `display: contents` dissolves the two
+   .course-grid rows so all six cards flow through one 2-column grid — the
+   3-per-row split only matters at PC and inside the mobile swipe tracks. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .styles-panel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 16px;
   }
 
-  .course-card {
-    flex: none;
-    width: 100%;
+  .course-grid {
+    display: contents;
   }
 }
 
@@ -1350,10 +1357,10 @@ button { font-family: inherit; cursor: pointer; }
   }
 
   /* Course cards become two stacked horizontal-swipe rows (3 cards per
-     row) instead of one tall 2-column grid (the 1024px rule still
-     governs the 768-1023px tablet band, unchanged). .styles-panel just
-     stacks the two .course-grid rows; each .course-grid is its own
-     independent scroll-snap track. */
+     row) instead of one tall 2-column grid (the tablet rule above still
+     governs the 768-1023px band, unchanged). .styles-panel just stacks
+     the two .course-grid rows; each .course-grid is its own independent
+     scroll-snap track. */
   .styles-panel {
     display: flex;
     flex-direction: column;
