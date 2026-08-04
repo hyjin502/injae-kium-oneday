@@ -41,9 +41,13 @@
   /* background/bg-page (HDS) — new for FAQ, see design-tokens skill */
   --color-bg-page: #f7f7f8;
   /* brand/company-primary (HDS) — the brand blue (#0066ff) used by the
-     floating CTA and the course-card "직무" badge. */
+     floating CTA. */
   --color-brand-primary: #0066ff;
 
+  /* radius/md (HDS) = 12px, the design-system step for cards. Distinct from
+     --radius-2xl (15px), which is a legacy value that does NOT match the
+     design system's radius/2xl — see the design-tokens skill. */
+  --radius-md: 12px;
   --radius-xl: 20px;
 
   --bp-mobile-max: 767px;
@@ -1098,7 +1102,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ==========================================================================
-   Section 5 — AI·직무·리더십 스타일 선택
+   Section 5 — 인재키움 교육과정 (Figma 2503:1231)
    ========================================================================== */
 .section-styles {
   width: 100%;
@@ -1157,15 +1161,18 @@ button { font-family: inherit; cursor: pointer; }
   min-width: 0;
   background: var(--color-white);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-2xl, 12px);
+  border-radius: var(--radius-md);
   overflow: hidden;
   padding-bottom: 20px;
 }
 
+/* 800x450 course banner (Figma 2503:1231) — aspect-ratio instead of the old
+   fixed 178px so the thumbnail keeps its proportions as the card narrows on
+   tablet/mobile. At the 316px PC column that lands on 177.75px, the spec height. */
 .course-thumb {
   position: relative;
   width: 100%;
-  height: 178px;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: var(--color-black);
 }
@@ -1178,16 +1185,16 @@ button { font-family: inherit; cursor: pointer; }
 
 .course-ribbon {
   position: absolute;
-  top: 15px;
-  right: 21px;
+  top: 16px;
+  right: 16px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 20px;
   padding: 0 6px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--color-ink);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--color-ink);
   font-size: 12px;
   font-weight: 600;
   line-height: 1.6;
@@ -1201,7 +1208,7 @@ button { font-family: inherit; cursor: pointer; }
   flex-direction: column;
   align-items: flex-start;
   flex: 1 1 auto;
-  gap: 12px;
+  gap: 16px;
   width: 100%;
   padding: 0 16px;
 }
@@ -1214,33 +1221,13 @@ button { font-family: inherit; cursor: pointer; }
   width: 100%;
 }
 
-.badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 20px;
-  padding: 0 6px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.6;
-  letter-spacing: var(--tracking-tight-5, -0.5px);
-  white-space: nowrap;
-}
-
-.badge-warning {
-  color: #ff9200;
-  background: rgba(255, 146, 0, 0.06);
-}
-
-.badge-brand {
-  color: var(--color-brand-primary);
-  background: rgba(0, 102, 255, 0.06);
-}
-
-.badge-ax {
-  color: #6541f2;
-  background: rgba(81, 52, 194, 0.06);
+/* Title + description sit closer together (4px) than the 8px that separates
+   them from the 교육일자/신청마감 block. */
+.course-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
 }
 
 .course-title {
@@ -1260,10 +1247,13 @@ button { font-family: inherit; cursor: pointer; }
   min-height: 52px;
 }
 
+/* 교육일자 / 신청마감 are one line each, stacked (Figma 2503:1231) — they no
+   longer share a row the way the old 시간/정원 pair did. */
 .course-meta {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
 }
 
 .meta-item {
@@ -1280,16 +1270,8 @@ button { font-family: inherit; cursor: pointer; }
 .meta-icon {
   width: 12px;
   height: 12px;
+  flex: none;
   display: inline-block;
-}
-
-.meta-dot {
-  display: inline-block;
-  width: 2px;
-  height: 2px;
-  border-radius: 90px;
-  background: #dbdcdf;
-  margin: 0 2px;
 }
 
 .course-price {
@@ -1336,6 +1318,7 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: 8px;
   font-family: var(--font-family);
   font-size: 14px;
+  font-weight: 700;
   line-height: 1.6;
   letter-spacing: var(--tracking-tight-5, -0.5px);
   color: var(--color-ink);
